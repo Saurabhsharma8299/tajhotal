@@ -1,0 +1,270 @@
+
+
+
+
+
+.hero1{
+    background:url("destination.jpg")no-repeat center center /cover;
+     color:white;
+	 text-align:center;
+	 padding:120px 20px;
+}
+
+.hero-content1 h2{
+               font-size:3rem;
+			   margin-bottom:10px;
+}
+
+.hero-content1 p{
+               font-size:1.2rem;
+			   margin-bottom:20px;
+}
+
+.btn1{
+     background:#f0a500;
+	 padding:10px 25px;
+	 color:white;
+	 text-decoration:none;
+	 border-radius:5px;
+}
+
+.btn1:hover {
+  background-color: #8a6420;
+}
+
+.hero2{
+    background:url("hotels2.jpeg")no-repeat center center /cover;
+     color:white;
+	 text-align:center;
+	 padding:120px 20px;
+}
+
+.hero-content2 h2{
+               font-size:3rem;
+			   margin-bottom:10px;
+			   color:white;
+}
+
+.hero-content2 p{
+               font-size:1.2rem;
+			   margin-bottom:20px;
+			   color:white;
+}
+
+
+
+.culinary-section2{
+	              position:relative;
+				  height:80%;
+				  background-image:url('events.jpg');
+				  background-size:cover;
+				  background-position:center;
+				  display:flex;
+				  align-items:flex-end;
+				  justify-content:left;
+				  padding-bottom:60px;
+	
+}
+
+.culinary-text2{
+	           display:flex;
+			   align-items:center;
+			   color:white;
+			   font-weight:bold;
+			   font-size:28px;
+	
+}
+
+.culinary-text .line2{
+	                  display:inline-block;
+					  height:2px;
+					  width:70px;
+					  background-color:white;
+					  margin-right:15px;
+	
+}
+
+
+.features{
+         padding:60px 20px;
+		 background:#fff;
+		 text-align:center;
+		 
+}
+
+features h2{
+          margin-bottom:40px;
+		  font-size:2rem;
+}
+
+.feature-grid{
+             display:flex;
+			 justify-content:space-around;
+			 flex-wrap:wrap;
+			 gap:30px;
+}
+
+.feature-box{
+           flex:1 1 250px;
+		   padding:20px;
+		   background:#f4f4f4;
+		   border-radius:8px;
+}
+
+
+
+
+.room-list{
+	       padding:60px 20px;
+		   background-color:#fff;
+		   
+	
+}
+
+.room-list h2{
+	         text-align:center;
+			 margin-bottom:40px;
+			 font-size:2rem;
+	
+}
+
+.rooms-grid{
+	        display:flex;
+			justify-content:space-around;
+			flex-wrap:wrap;
+			gap:30px;
+	
+}
+
+.room-card{
+	     background:#f4f4f4;
+		 border-radius:8px;
+		 overflow:hidden;
+		 flex:1 1 300px;
+		 text-align:center;
+		 padding-bottom:20px;
+		 box-shadow:0 2px 5px rgba(0,0,0,0.1);
+		 
+	
+}
+
+room-card img{
+	       width:100%;
+		   height:auto;
+		   
+	
+}
+
+room-card h3{
+	         margin:15px 0 10px;
+			 
+	
+}
+
+.room-card p{
+	        padding:0 15px;
+			font-size:0.95rem;
+			margin-bottom:10px;
+			
+	
+}
+
+.room-card .price{
+	             font-weight:bold;
+				 color:#e67e22;
+	
+}
+
+.booking-section {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.booking-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.booking-form {
+  max-width: 600px;
+  margin: auto;
+  background: #f4f4f4;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.booking-form button {
+  align-self: flex-start;
+  background: #f0a500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-section {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  background: #f4f4f4;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  background: #f0a500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}

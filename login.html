@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taj Hotels Login</title>
+ <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      
+      background: #f9f9f9;
+      color: #333;
+    }
+      
+	  .w3-bar {
+      position: fixed;
+      width: 100%;
+      z-index: 10000; 
+    }
+
+	
+	
+    .w3-dropdown-content {
+      position: fixed !important; 
+      top: 60px; 
+      right: 10px; 
+      z-index: 10001; 
+      display: none; 
+    }
+
+    .w3-dropdown-hover:hover .w3-dropdown-content {
+      display: block !important; 
+    }
+	  
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .left-section, .right-section {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .left-section {
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right-section {
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid #eee;
+    }
+
+    .logo {
+      width: 60px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .neupass {
+      color: #d52c2c;
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 5px;
+      margin-bottom: 20px;
+    }
+
+    .subheading {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .benefit {
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .benefit:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .benefit img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .benefit p {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .join-btn {
+      background: #a17428;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      margin-top: 30px;
+      width: 150px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    .tabs div {
+      padding: 10px 20px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+    }
+
+    .tabs div.active {
+      border-bottom: 2px solid #a11a27;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .checkbox {
+      margin-bottom: 20px;
+    }
+
+    .partners {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .partners img {
+      max-height: 40px;
+    }
+
+    .continue-btn {
+      background-color: #a17428;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .join-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+<div class="w3-bar w3-white w3-card w3-large w3-padding" style="display:flex; justify-content:space-between; align-items:center; padding:0 20px; height:60px;">
+	
+  <div style="display:flex; align-items:center;">
+  <a href="#" class="w3-bar-item">
+    <img src="photo/logo.png" alt="logo" style="height:50px;width:60px;">
+  </a>
+  </div>
+  
+  <div style="display:flex; justify-content:center; flex:1; gap:15px;">  
+  <a href="index.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+  <a href="hotels.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+  <a href="newdining.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+  <a href="offers.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+  <a href="membership.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+  <a href="wellness1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+  <a href="contact1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+  </div>
+  
+  
+  <div class="w3-right w3-hide-small" style="display:flex; align-items:center; gap:10px;">
+    <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+    <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+  </div>
+
+  <div class="w3-dropdown-hover w3-right w3-hide-medium w3-hide-large">
+    <button class="w3-button" style="color:#d4af37;">☰ Menu</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+      <a href="newdining.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+      <a href="wellness1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+      <a href="contact1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+      <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+      <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+    </div>
+  </div>
+</div>
+<br><br>
+
+  <div class="container">
+    <!-- Left Side -->
+    <div class="left-section">
+      <img src="photo/logo.png" alt="Taj Logo" class="logo" />
+      <h2 style="font-family: 'times new roman', serif;">NOT A MEMBER? JOIN NOW</h2>
+      <h3 class="neupass" style="font-family: 'times new roman', serif;">NEUPASS</h3>
+      <p class="subheading" style="font-family: 'times new roman', serif;">MEMBER BENEFITS</p>
+      <div class="benefits">
+        <div class="benefit">
+          <img src="photo/loginpage.jpg" alt="Benefit 1" />
+          <p style="font-family: 'times new roman', serif;">Exclusive Member Rates</p>
+        </div>
+        <div class="benefit">
+          <img src="photo/loginpage2.jpg" alt="Benefit 2" />
+          <p style="font-family: 'times new roman', serif;">Special Offers for Dining & Spas</p>
+        </div>
+        <div class="benefit">
+          <img src="photo/loginpage3.jpg" alt="Benefit 3" />
+          <p style="font-family: 'times new roman', serif;">Minimum 4% NeuCoins</p>
+        </div>
+        <div class="benefit">
+          <img src="photo/loginpage4.jpg" alt="Benefit 4" />
+          <p style="font-family: 'times new roman', serif;">Earn & Redeem across Stays, Dining, Spas and more</p>
+        </div>
+      </div>
+      <button class="join-btn w3-hover-shadow w3-hover-pointer" style="font-family: 'times new roman', serif;">JOIN NOW</button>
+    </div>
+
+    <!-- Right Side -->
+    <div class="right-section">
+      <h2 style="font-family: 'times new roman', serif;">ALREADY A MEMBER? LOGIN</h2>
+      <div class="tabs">
+        <div class="active" style="font-family: 'times new roman', serif;">MOBILE NUMBER</div>
+        <div style="font-family: 'times new roman', serif;">EMAIL ADDRESS</div>
+        <div style="font-family: 'times new roman', serif;">MEMBERSHIP NUMBER</div>
+      </div>
+      <input type="text" placeholder="Enter your mobile number" />
+      <div class="checkbox">
+        <input type="checkbox" id="agree" />
+        <label for="agree" style="font-family: 'times new roman', serif;">By continuing you agree to our Terms of Use and Privacy Policy</label>
+      </div>
+      <div class="partners">
+        <img src="photo/chambers.png" alt="The Chambers" />
+        <img src="photo/neupass.png" alt="NeuPass" />
+        <img src="photo/epicure.png" alt="Epicure" />
+      </div>
+      <button class="continue-btn w3-hover-shadow w3-hover-pointer" style="font-family: 'times new roman', serif;">CONTINUE</button>
+    </div>
+  </div>
+	<br>
+<!-- ENHANCED FOOTER -->
+		
+	<footer class="w3-black w3-padding-64 w3-center" style="color: #ccc; font-family: 'Georgia', serif;">
+
+	  <div class="w3-row-padding w3-padding-32 w3-container" style="max-width: 1400px; margin: auto; text-align: left;">
+		
+		<!-- ABOUT TAJ -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">About Taj Hotels</h4>
+		  <p>Taj Hotels is a symbol of Indian hospitality with a rich legacy of luxury and excellence. Established in 1903, the brand combines regal heritage with modern luxury across India and globally.</p>
+		</div>
+
+		<!-- QUICK LINKS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Quick Links</h4>
+		  <p><a href="index.html" class="w3-text-white">Destinations</a></p>
+		  <p><a href="hotels.html" class="w3-text-white">Hotels</a></p>
+		  <p><a href="newdining.html" class="w3-text-white">Dining</a></p>
+		  <p><a href="offers.html" class="w3-text-white">Offers</a></p>
+		  <p><a href="membership.html" class="w3-text-white">Membership</a></p>
+		  <p><a href="booking1.html" class="w3-text-white">Book A Stay</a></p>
+		  <p><a href="contact1.html" class="w3-text-white">Contact1</a></p>
+		</div>
+
+		<!-- POPULAR DESTINATIONS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Popular Destinations</h4>
+		  <p>Goa</p>
+		  <p>Mumbai</p>
+		  <p>Jaipur</p>
+		  <p>New Delhi</p>
+		  <p>London</p>
+		  <p>New York</p>
+		</div>
+
+		<!-- HOTEL BRANDS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Our Brands</h4>
+		  <p>Taj</p>
+		  <p>Vivanta</p>
+		  <p>SeleQtions</p>
+		  <p>Ginger</p>
+		  <p>Tree of Life</p>
+		  <p>St. James' Court</p>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin: 40px 0;">
+
+	  <!-- NEWSLETTER AND CONTACT -->
+	  <div class="w3-container w3-padding-16" style="max-width: 1200px; margin: auto;">
+
+		<!-- Newsletter Signup -->
+		<div style="margin-bottom: 30px;">
+		  <h4 style="color: #FFCC33;">Subscribe to our Newsletter</h4>
+		  <p>Stay updated with exclusive offers and luxury experiences.</p>
+		  <input type="email" placeholder="Enter your email" style="padding:10px; width:300px; border-radius: 20px; border:none; margin-right:10px;">
+		  <button style="padding:10px 20px; border:none; border-radius: 20px; background-color:#FFCC33; font-weight: bold;">Subscribe</button>
+		</div>
+
+		<!-- Contact Info & Social -->
+		<div class="w3-row-padding w3-center" style="margin-top: 20px;">
+		  <div class="w3-half">
+			<h5>Contact Us</h5>
+			<p>Email: support@tajhotels.com</p>
+			<p>Phone: +91 22 6601 1825</p>
+			<p>Corporate Office: Mumbai, India</p>
+		  </div>
+		  <div class="w3-half">
+			<h5>Follow Us</h5>
+			<p>
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-youtube"></i></a>
+			</p>
+		  </div>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin-top: 40px;">
+	  <p style="color: #999;">&copy; 2025 Taj Hotels. All rights reserved. | <a href="#" class="w3-text-orange">Privacy Policy</a> | <a href="#" class="w3-text-orange">Terms of Service</a></p>
+	</footer>
+  <script>
+    const tabs = document.querySelectorAll('.tabs div');
+    const input = document.querySelector('.right-section input[type="text"]');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        if (tab.textContent === 'MOBILE NUMBER') {
+          input.placeholder = 'Enter your mobile number';
+        } else if (tab.textContent === 'EMAIL ADDRESS') {
+          input.placeholder = 'Enter your email address';
+        } else if (tab.textContent === 'MEMBERSHIP NUMBER') {
+          input.placeholder = 'Enter your membership number';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

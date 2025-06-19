@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DESTINATION</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="desti.js"></script>
+
+  <link rel="icon" href="taj.jfif" type="image/x-icon">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { height: 100%; font-family: 'times new roman', serif; }
+    #palace {
+      background-image: url('photo/desti.avif');
+      width: 100%; height: 570px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: relative; color: white;
+    }
+	
+	 .w3-bar {
+      position: fixed;
+      width: 100%;
+      z-index: 10000; 
+    }
+
+	
+	
+    .w3-dropdown-content {
+      position: fixed !important; 
+      top: 60px; 
+      right: 10px; 
+      z-index: 10001; 
+      display: none; 
+    }
+
+    .w3-dropdown-hover:hover .w3-dropdown-content {
+      display: block !important; 
+    }
+	
+    .content {
+      position: absolute; top: 300px;
+      width: 100%; text-align: center;
+    }
+    .search-box {
+      display: flex; justify-content: center; align-items: center;
+      margin-top: 10px;
+    }
+    .search-box input[type="text"] {
+      padding: 10px; width: 650px;
+      border: none; border-radius: 4px 0 0 4px;
+    }
+    .search-box button, .mic-btn {
+      padding: 10px 15px; border: none;
+      background-color: white; font-weight: bold;
+      cursor: pointer;
+    }
+    .mic-btn i, .search-box button i { color: black; }
+    .awaits {
+      width: 100%; background-color: #E1DBDB;
+      padding: 50px 0; text-align: center;
+    }
+    .awaits h2 {
+      font-size: 30px; color: #FFCC33;
+      font-weight: bold; font-family: 'Georgia', serif;
+    }
+    .country-box {
+      display: inline-block; margin: 5px 10px;
+      padding: 10px 20px;
+      background-color: #fff; border: 1px solid #ccc;
+      border-radius: 20px; cursor: pointer;
+    }
+    .country-box:hover, .country-box.active {
+      background-color: #ffcc33;
+    }
+    .country-gallery {
+      margin-top: 40px;
+    }
+    .country-card {
+      width: 100%; max-width: 200px;
+      height: 200px; border-radius: 10px;
+      overflow: hidden; margin: auto;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .country-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+    .country-card img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+	/* List and Map */
+.LIST {
+    width: 32%;
+    margin-top: 30px;
+    background-color: silver;
+    border-radius: 30px;
+    margin-left: 65%;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.list-btn,
+.map {
+    height: 40px;
+    background-color: orange;
+    color: black;
+    padding: 0 65px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.list-btn:hover {
+    transform: scale(1.05);
+}
+#map-container {
+    display: none;
+    width: 80%;
+    height: 400px;
+    margin: 20px auto;
+}
+#map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Search Filter */
+.LIST2 {
+    width: 90%;
+    border-radius: 30px;
+    margin: 30px auto 20px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+.LIST2 input,
+.LIST2 select {
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    border-bottom: 2px solid black;
+    padding: 0 15px;
+    font-size: 16px;
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Galleries */
+.gallery2, .gallery3, .gallery4 {
+    width: 500px;
+    height: 530px;
+    float: left;
+    margin-left: 70px;
+    margin-top: 90px;
+}
+.brands,.newdelhi, .sanity, .bombay, .taj-mumbai, .resort, .aguda , .tower, .santacruz{
+    width: 500px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+.brands {
+    background-image: url('https://cdn.sanity.io/images/ocl5w36p/prod4/dde040ba6aff98893f157008caaa0ba0670384a6-1720x1112.jpg?w=768&auto=format&dpr=2');
+}
+.sanity {
+    background-image: url('https://cdn.sanity.io/images/ocl5w36p/prod4/0320dcc4260811999fd91dcfbdaf29263ef03227-1720x1112.jpg?w=768&auto=format&dpr=2');
+}
+
+.bombay{
+	background-image:url('https://cdn.sanity.io/images/ocl5w36p/prod4/755516a1ccee23175ce67a8a8d7752950481f4d9-1720x1112.jpg?w=768&auto=format&dpr=2');
+} 
+
+.taj-mumbai{
+	background-image:url('https://cdn.sanity.io/images/ocl5w36p/prod4/d09219cee0bfd3643f3117dd2305a762be428341-1720x1112.jpg?w=768&auto=format&dpr=2');
+}
+
+.resort{
+	background-image:url('https://cdn.sanity.io/images/ocl5w36p/prod4/69004c3d2ae8e103bc763efa405e67c66d79d23b-1720x1112.jpg?w=768&auto=format&dpr=2');
+} 
+
+.aguda{
+	background-image:url('https://cdn.sanity.io/images/ocl5w36p/prod4/08a25112ba0e2d893ffbcdce6a195789cb15cba6-1720x1112.jpg?w=768&auto=format&dpr=2');
+}
+
+.tower{
+	background-image:url('https://cdn.sanity.io/images/ocl5w36p/prod4/87211fc1758d35ed89ccc46a052c08f734b3d535-1720x1100.jpg?w=768&auto=format&dpr=2');
+}
+
+.santacruz{
+	background-image:url('https://cdn.sanity.io/images/ocl5w36p/prod4/cd27a300a9d9cb881a7bc90bcca820a6389b1812-1720x1112.jpg?w=768&auto=format&dpr=2');
+}
+
+.newdelhi{
+	background-image:url('https://cdn.sanity.io/images/ocl5w36p/prod4/659bf896fc962eb6ca0221690a45e7d649a8dd0c-1720x1112.jpg?w=768&auto=format&dpr=2')
+}
+
+/* Hover Effects for Gallery Boxes */
+.gallery2:hover,
+.gallery3:hover,
+.gallery4:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add transition for smooth effect */
+.gallery2,
+.gallery3,
+.gallery4 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-2{
+	width:500px;
+	height:230px;
+	
+}
+
+/* Styling for content inside content-2 box */
+.content-2 h3 {
+	margin-top:17px;
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+	text-align:center;
+}
+
+.content-2 p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
+	padding:10px;
+	float:left;
+	
+}
+
+.content-2 details {
+    font-size: 13px;
+    color: #444;
+	margin-left:340px;
+	
+}
+
+.content-2 button {
+    padding: 10px 20px;
+    background-color: #d4af37;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    float: left;
+}
+
+.content-2 button:hover {
+    background-color: #e6b800;
+}
+
+/* New CSS for h5 inside .content-2 */
+.content-2 h5 {
+    font-size: 16px;
+    color: #333;
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Georgia', serif;
+	padding:10px;
+	
+}
+
+/* Load More Styling */
+.load-more {
+    width: 90%;
+    margin-top:390px;
+    text-align: center;
+	padding-top:30px;
+	
+	
+}
+
+.load-more summary {
+    font-size: 18px;
+    font-weight: bold;
+	margin-top:50px;
+	background-color: #FFCC33;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.load-more summary:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+.load-more details[open] summary {
+    background-color: #e6b800;
+}
+
+.load-more details > div {
+    margin-top: 20px;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-bar w3-white w3-card w3-large w3-padding" style="display:flex; justify-content:space-between; align-items:center; padding:0 20px; height:60px;">
+  <div style="display:flex; align-items:center;">
+  <a href="#" class="w3-bar-item">
+    <img src="photo/logo.png" alt="logo" style="height:50px;width:60px;">
+  </a>
+  </div>
+  
+  <div style="display:flex; justify-content:center; flex:1; gap:15px;">  
+  <a href="index.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+  <a href="hotels.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+  <a href="newdining.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+  <a href="offers.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+  <a href="membership.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+  <a href="wellness1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+  <a href="contact1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+  </div>
+  
+  
+  <div class="w3-right w3-hide-small" style="display:flex; align-items:center; gap:10px;">
+    <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+    <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+  </div>
+
+
+  <div class="w3-dropdown-hover w3-right w3-hide-medium w3-hide-large">
+    <button class="w3-button" style="color:#d4af37;">☰ Menu</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="index.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+      <a href="hotels.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+      <a href="newdining.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+      <a href="offers.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+      <a href="membership.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+      <a href="wellness1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+      <a href="contact1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+      <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+      <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+    </div>
+  </div>
+</div>
+  <!-- HERO SECTION -->
+  <div id="palace">
+    <div class="content">
+      <h1 class="font-family: 'times new roman', serif;" style="font-family: 'times new roman', serif;">___ OUR DESTINATION</h1>
+      <div class="search-box">
+        <input type="text" placeholder="🔍 Click here to Search Destination or hotels ...">
+        <button type="button"><i class="fas fa-search"></i> Search</button>
+        <button class="mic-btn" title="Voice Search">
+          <i class="fas fa-microphone"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESTINATION SCROLL -->
+  <div class="awaits font-family: 'times new roman', serif;">
+    <h2 class="font-family: 'times new roman', serif;">___ THE WORLD AWAITS ___</h2>
+    <p>The world is full of amazing experiences. Allow us to show you just how wonderful they can be with our luxury hotels.</p>
+    <div style="margin-top: 20px;">
+      <span class="country-box font-family: 'times new roman', serif;">AGRA</span>
+      <span class="country-box font-family: 'times new roman', serif;">AGARTALA</span>
+      <span class="country-box font-family: 'times new roman', serif;">AHMEDABAD</span>
+      <span class="country-box font-family: 'times new roman', serif;">SPAIN</span>
+      <span class="country-box font-family: 'times new roman', serif;">FRANCE</span>
+      <span class="country-box active font-family: 'times new roman', serif;">ALL</span>
+      <span class="country-box font-family: 'times new roman', serif;">KERALA</span>
+      <span class="country-box">AMRITSAR</span>
+      <span class="country-box">GERMANY</span>
+      <span class="country-box">ITALY</span>
+      <span class="country-box">MALDIVES</span>
+      <span class="country-box">AUSTRALIA</span>
+      <span class="country-box">CANADA</span>
+      <span class="country-box">BRAZIL</span>
+    </div>
+  </div>
+
+  <!-- FEATURE DESTINATIONS USING W3.CSS -->
+  <div class="w3-container">
+    <h2 class="w3-center font-family: 'times new roman', serif;" style="color:#FFCC33; font-family: 'times new roman', serif;">___ FEATURE DESTINATIONS ___</h2>
+    <div class="country-gallery w3-row-padding w3-center">
+      <div class="w3-col s6 m4 l2">
+        <div class="country-card">
+          <img src="photo/agra.avif" alt="AGRA">
+          <div>AGRA</div>
+        </div>
+      </div>
+      <div class="w3-col s6 m4 l2">
+        <div class="country-card">
+          <img src="photo/agartala.avif" alt="AGARTALA">
+          <div>AGARTALA</div>
+        </div>
+      </div>
+      <div class="w3-col s6 m4 l2">
+        <div class="country-card">
+          <img src="photo/ahmedabd.avif" alt="AHMEDABAD">
+          <div>AHMEDABAD</div>
+        </div>
+      </div>
+      <div class="w3-col s6 m4 l2">
+        <div class="country-card">
+          <img src="photo/ajmer.avif" alt="SPAIN">
+          <div>SPAIN</div>
+        </div>
+      </div>
+      <div class="w3-col s6 m4 l2">
+        <div class="country-card">
+          <img src="photo/alibug.avif" alt="FRANCE">
+          <div>FRANCE</div>
+        </div>
+      </div>
+      <div class="w3-col s6 m4 l2">
+        <div class="country-card">
+          <img src="photo/alleey.avif" alt="KERALA">
+          <div>KERALA</div>
+        </div>
+		
+      </div>
+    </div>
+  </div>
+  <!-- LIST AND MAP -->
+    <div class="LIST">
+      <div class="list-btn" style="background-color:white;">LIST</div>
+      <div class="map" onclick="toggleMap()">MAP</div>
+    </div>
+
+    <!-- GOOGLE MAP -->
+    <div id="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18..." allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- SEARCH FILTERS -->
+    <div class="LIST2">
+      <input type="text" placeholder="Enter Destination/City">
+      <select>
+        <option selected disabled>Select Brand</option>
+        <option>Taj</option>
+        <option>Claridges Collection</option>
+        <option>SeleQtions</option>
+        <option>Gateway</option>
+        <option>Tree of Life</option>
+        <option>Vivanta</option>
+        <option>Ginger</option>
+        <option>AMA</option>
+      </select>
+      <select>
+        <option selected disabled>Select Theme</option>
+        <option>Adventure</option>
+        <option>Beach</option>
+        <option>Bungalows</option>
+        <option>City Hotels</option>
+        <option>Couples</option>
+        <option>Family/Kids</option>
+        <option>International</option>
+        <option>Mountains</option>
+      </select>
+    </div>
+
+    <!-- GALLERY ROWS -->
+    <div class="gallery2"><div class="brands"></div>
+	<div class="content-2"><h3>St. James' Court, A Taj Hotel</h3>
+		<p>Immerse in London's history and style at St. James' Court, a Taj Hotel, offering a blend of Victorian <details>grandeur and contemporary luxury</details></p>
+			<button>BOOK NOW	</button>	<h5><u>VISIT HOTELS</u></h5>
+				
+		</div>
+	</div>
+    <div class="gallery2"><div class="sanity"></div><div class="content-2"><h3>The Pierre, A Taj Hotel, New York</h3>
+		<p>Experience timeless elegance at The Pierre, where Taj's hospitality meets New York's luxury, offering sophistication and... <details>classic charm..</details></p>
+			<button>BOOK NOW	</button>	<h5><u>VISIT HOTELS</u></h5>
+				</div></div>
+    <div class="gallery3"><div class="bombay"></div><div class="content-2"><h3>Taj Lands End, Mumbai</h3>
+		<p>Indulge in experiences overlooking the Arabian Sea, where warm hospitality meets stunning views and culinary delights... <details>delights, perfect for both leisure and business travelers.</details></p>
+			<button>BOOK NOW	</button>	<h5><u>VISIT HOTELS</u></h5>
+				</div></div>
+    <div class="gallery3"><div class="taj-mumbai"></div><div class="content-2"><h3>St. James' Court, A Taj Hotel</h3>
+		<p>Immerse in London's history and style at St. James' Court, a Taj Hotel, offering a blend of Victorian <details>grandeur and contemporary luxury</details></p>
+			<button>BOOK NOW	</button>	<h5><u>VISIT HOTELS</u></h5>
+				</div></div>
+	<div class="gallery4"><div class="resort"></div><div class="content-2"><h3>St. James' Court, A Taj Hotel</h3>
+		<p>Immerse in London's history and style at St. James' Court, a Taj Hotel, offering a blend of Victorian <details>grandeur and contemporary luxury</details></p>
+			<button>BOOK NOW	</button>	<h5><u>VISIT HOTELS</u></h5>
+				</div></div>
+    <div class="gallery4"><div class="aguda"></div><div class="content-2"><h3>St. James' Court, A Taj Hotel</h3>
+		<p>Immerse in London's history and style at St. James' Court, a Taj Hotel, offering a blend of Victorian <details>grandeur and contemporary luxury</details></p>
+			<button>BOOK NOW	</button>	<h5><u>VISIT HOTELS</u></h5>
+				</div></div>
+	</div>
+	<div class="load-more">
+  <details>
+    <summary>Load more...</summary>
+
+    <div class="gallery4">
+      <div class="tower"></div>
+      <div class="content-2">
+        <h3>St. James' Court, A Taj Hotel</h3>
+        <p>Immerse in London's history and style at St. James' Court, a Taj Hotel, offering a blend of Victorian
+          <details>grandeur and contemporary luxury</details>
+        </p>
+        <button>BOOK NOW</button>
+        <h5><u>VISIT HOTELS</u></h5>
+      </div>
+    </div>
+
+    <div class="gallery4">
+      <div class="santacruz"></div>
+      <div class="content-2">
+        <h3>St. James' Court, A Taj Hotel</h3>
+        <p>Immerse in London's history and style at St. James' Court, a Taj Hotel, offering a blend of Victorian
+          <details>grandeur and contemporary luxury</details>
+        </p>
+        <button>BOOK NOW</button>
+        <h5><u>VISIT HOTELS</u></h5>
+      </div>
+    </div>
+
+    <div class="gallery4">
+      <div class="newdelhi"></div>
+      <div class="content-2">
+        <h3>St. James' Court, A Taj Hotel</h3>
+        <p>Immerse in London's history and style at St. James' Court, a Taj Hotel, offering a blend of Victorian
+          <details>grandeur and contemporary luxury</details>
+        </p>
+        <button>BOOK NOW</button>
+        <h5><u>VISIT HOTELS</u></h5>
+      </div>
+    </div>
+
+    <div class="gallery4">
+      <div class="santacruz"></div>
+      <div class="content-2">
+        <h3>St. James' Court, A Taj Hotel</h3>
+        <p>Immerse in London's history and style at St. James' Court, a Taj Hotel, offering a blend of Victorian
+          <details>grandeur and contemporary luxury</details>
+        </p>
+        <button>BOOK NOW</button>
+        <h5><u>VISIT HOTELS</u></h5>
+      </div>
+    </div>
+
+  </details>
+</div>
+
+<!-- ✅ Clear floats before footer -->
+<div style="clear: both;"></div>
+
+<footer class="w3-black w3-padding-64 w3-center">
+  <!-- Footer content -->
+</footer>
+
+	<!-- ENHANCED FOOTER -->
+		
+	<footer class="w3-black w3-padding-64 w3-center" style="color: #ccc; font-family: 'Georgia', serif;">
+
+	  <div class="w3-row-padding w3-padding-32 w3-container" style="max-width: 1400px; margin: auto; text-align: left;">
+		
+		<!-- ABOUT TAJ -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">About Taj Hotels</h4>
+		  <p>Taj Hotels is a symbol of Indian hospitality with a rich legacy of luxury and excellence. Established in 1903, the brand combines regal heritage with modern luxury across India and globally.</p>
+		</div>
+
+		<!-- QUICK LINKS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Quick Links</h4>
+		  <p><a href="index.html" class="w3-text-white">Destinations</a></p>
+		  <p><a href="hotels.html" class="w3-text-white">Hotels</a></p>
+		  <p><a href="newdining.html" class="w3-text-white">Dining</a></p>
+		  <p><a href="offers.html" class="w3-text-white">Offers</a></p>
+		  <p><a href="membership.html" class="w3-text-white">Membership</a></p>
+		  <p><a href="booking1.html" class="w3-text-white">Book A Stay</a></p>
+		  <p><a href="contact1.html" class="w3-text-white">Contact1</a></p>
+		</div>
+
+		<!-- POPULAR DESTINATIONS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Popular Destinations</h4>
+		  <p>Goa</p>
+		  <p>Mumbai</p>
+		  <p>Jaipur</p>
+		  <p>New Delhi</p>
+		  <p>London</p>
+		  <p>New York</p>
+		</div>
+
+		<!-- HOTEL BRANDS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Our Brands</h4>
+		  <p>Taj</p>
+		  <p>Vivanta</p>
+		  <p>SeleQtions</p>
+		  <p>Ginger</p>
+		  <p>Tree of Life</p>
+		  <p>St. James' Court</p>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin: 40px 0;">
+
+	  <!-- NEWSLETTER AND CONTACT -->
+	  <div class="w3-container w3-padding-16" style="max-width: 1200px; margin: auto;">
+
+		<!-- Newsletter Signup -->
+		<div style="margin-bottom: 30px;">
+		  <h4 style="color: #FFCC33;">Subscribe to our Newsletter</h4>
+		  <p>Stay updated with exclusive offers and luxury experiences.</p>
+		  <input type="email" placeholder="Enter your email" style="padding:10px; width:300px; border-radius: 20px; border:none; margin-right:10px;">
+		  <button style="padding:10px 20px; border:none; border-radius: 20px; background-color:#FFCC33; font-weight: bold;">Subscribe</button>
+		</div>
+
+		<!-- Contact Info & Social -->
+		<div class="w3-row-padding w3-center" style="margin-top: 20px;">
+		  <div class="w3-half">
+			<h5>Contact Us</h5>
+			<p>Email: support@tajhotels.com</p>
+			<p>Phone: +91 22 6601 1825</p>
+			<p>Corporate Office: Mumbai, India</p>
+		  </div>
+		  <div class="w3-half">
+			<h5>Follow Us</h5>
+			<p>
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-youtube"></i></a>
+			</p>
+		  </div>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin-top: 40px;">
+	  <p style="color: #999;">&copy; 2025 Taj Hotels. All rights reserved. | <a href="#" class="w3-text-orange">Privacy Policy</a> | <a href="#" class="w3-text-orange">Terms of Service</a></p>
+	</footer>
+
+  
+  
+  <!-- JAVASCRIPT -->
+  <script>
+    function toggleMap() {
+      const mapDiv = document.getElementById("map-container");
+      mapDiv.style.display = mapDiv.style.display === "block" ? "none" : "block";
+    }
+	
+
+  </script>
+</body>
+</html>

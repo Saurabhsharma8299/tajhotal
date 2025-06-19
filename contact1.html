@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>taj contact page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+  
+    .contact-bg {
+      background-image: url('https://cdn.sanity.io/images/ocl5w36p/prod5/1ad457faf877fccd9453d96cdca808ca6f68470b-3840x1320.jpg?w=3840&auto=format&dpr=2');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      position: relative;
+      z-index: 1; 
+    }
+	.w3-bar {
+      position: fixed;
+      width: 100%;
+      z-index: 10000; 
+    }
+	.w3-dropdown-content {
+      position: fixed !important; 
+      top: 60px; 
+      right: 10px; 
+      z-index: 10001; 
+      display: none; 
+    }
+
+    .w3-dropdown-hover:hover .w3-dropdown-content {
+      display: block !important; 
+    }
+	.section-title{
+	               text-align:center;
+				   position:relative;
+				   margin:50px 0;
+				   font-size:36px;
+				   color:#333;
+	               }
+     .section-title::before,
+	 .section-title::after{
+	                       content:"";
+						   position:absolute;
+						   top:50%;
+						   width:100px;
+                           height:1px;						   
+						 background-color:#333;
+	               }
+	.section-title::before{
+	                    left:0;
+						margin-left:-120px;		
+	                   }
+	.section-title::after{
+	                    right:0;
+						margin-right:-120px;		
+	                   }
+	.wrapper{
+	        display:flex;
+			align-items:center;
+			justify-content:center;
+	}
+	.section-title-container{
+	                         position:relative;
+							 padding:0 40px;
+	}
+	.section-title-container::before,
+	.section-title-container::after{
+	                               content:"";
+								   height:1px;
+								   width:100px;
+								   background:#000;
+								   position:absolute;
+								   top:50%;
+	}
+	.section-title-container::before{
+	                              left:0;
+								  transform:translatex(-110%);
+	}
+	.section-title-container::after{
+	                              right:0;
+								  transform:translatex(110%);
+	}
+	.w3-container1{
+			   color:#333;
+			   font-family: 'times new roman', serif;
+			    background-color:#f1f1f1;
+	            border-radius:8px;
+	            padding:20px;
+	            box-shadow:0 2px 6px rgba(0,0,0,0,0.1)
+	}
+	.center-heading {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .center-heading h2 {
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    .center-heading p {
+      font-size: 16px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    .contact-table {
+      max-width: 600px;
+      margin: 50px auto;
+	 
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .contact-row:last-child {
+      border-bottom: none;
+    }
+
+    .contact-label {
+      font-weight: 500;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-top: 20px;
+    }
+	.tab-btn {
+      cursor: pointer;
+      padding: 10px 20px;
+      border: none;
+      background: none;
+      font-weight: bold;
+      color: gray;
+      transition: 0.3s;
+    }
+    .tab-btn.active {
+      color: black;
+      border-bottom: 2px solid black;
+    }
+    .form-container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    input[type="text"], input[type="email"], input[type="date"], textarea {
+      border: none;
+      border-bottom: 1px solid gray;
+      width: 100%;
+      padding: 8px 8px 8px 30px;
+      margin: 10px 0;
+    }
+    
+    }
+    .submit-btn {
+      background-color: #b08968;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #a07658;
+    }
+	
+	.neupass-section {
+      background-color: #f2f2f2; /* light gray background */
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .neupass-heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      font-family: "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .neupass-heading::before,
+    .neupass-heading::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #333;
+      max-width: 100px;
+    }
+
+    .neupass-text {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .neupass-contact {
+      margin-top: 30px;
+      font-size: 16px;
+    }
+
+    .neupass-contact b {
+      color: #000;
+    }
+	
+	.offering-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px auto;
+      max-width: 1000px;
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .offering-image {
+      flex: 1;
+      max-width: 40%;
+      margin-right: 30px;
+    }
+    .offering-image img {
+      width: 100%;
+      border-radius: 8px;
+    }
+	.offering-image:hover img{
+	                          transform:scale(1.01);
+							  box-shadow:0 16px 32px rgba(0,0,0,0.3);
+							  
+	}
+    .offering-text {
+      flex: 1;
+    }
+    .offering-text h3 {
+      font-size: 28px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      color: #2e2e2e;
+    }
+    .offering-text p {
+      font-size: 16px;
+      color: #555;
+    }
+	
+	.contact-section {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 50px 20px;
+    }
+
+    .contact-box {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .contact-box h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .contact-box p {
+      font-size: 16px;
+      color: #555;
+      margin: 5px 0;
+    }
+
+    /* Vertical line between columns */
+    .divider {
+      border-left: 1px solid #ccc;
+      height: auto;
+      margin: 0 10px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        flex-direction: column;
+      }
+
+      .divider {
+        display: none;
+      }
+    }
+	
+	.careers-section {
+      background-color: #fff5f7; /* Light pink */
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .careers-section h2 {
+      font-size: 36px;
+      font-weight: normal;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .careers-section h2::before,
+    .careers-section h2::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 60px;
+      height: 1px;
+      background: #888;
+    }
+
+    .careers-section h2::before {
+      left: calc(50% - 150px);
+    }
+
+    .careers-section h2::after {
+      right: calc(50% - 150px);
+    }
+
+    .careers-section p {
+      font-size: 18px;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+
+    .careers-section a {
+      color: #888;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .careers-section a:hover {
+      text-decoration: underline;
+    }
+
+    .careers-section .email {
+      font-size: 18px;
+      color: #333;
+      margin-top: 10px;
+    }
+	
+	.registered-office {
+      background-color: #fdfdfd; /* Very light neutral background */
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .registered-office h2 {
+      font-size: 36px;
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+      position: relative;
+      color: #333;
+	  display:inline-block;
+	  padding:0 20px;
+    }
+
+    .registered-office h2::before,
+    .registered-office h2::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 60px;
+      height: 1px;
+      background: #888;
+	  transform:translateY(-50%);
+	  
+    }
+
+    .registered-office h2::before {
+      left:-80px;
+    }
+
+    .registered-office h2::after {
+      right:-80px;
+    }
+
+    .registered-office p {
+      font-size: 17px;
+      color: #444;
+      margin: 8px 0;
+    }
+
+    .registered-office .map-link {
+      color: #888;
+      font-size: 14px;
+      margin-left: 4px;
+    }
+
+    .registered-office .email {
+      margin-top: 20px;
+      font-size: 17px;
+      color: #333;
+      font-weight: 500;
+    }
+	
+	.footer{
+      background-color:#111;
+	  color:#fff;
+	  padding:40px 20px;
+	  
+}
+.footer-top{
+	        display:flex;
+			flex-wrap:wrap;
+			justify-content:space-between;
+}
+.subscribe input{
+	           padding:10px;
+			   margin-right:10px;
+			   border:none;
+			   border-radius:4px;	
+}
+.subscribe button{
+	            padding:10px 20px;
+				background-color:#888;
+				color:white;
+				border:none;
+				border-radius:4px;	
+}
+.contact-info,.quick-links{
+	                       margin-top:20px;
+						   max-width:300px;	
+}
+.quick-links ul{
+	            list-style:none;
+				padding:0;	
+}
+.quick-links li{
+	            margin-bottom:5px;	
+}
+.brands{
+	    margin-top:40px;
+		border-top:1px solid #333;
+		padding-top:20px;
+		text-align:center;	 
+}
+.footer-bottom{
+	            margin-top:30px;
+				border-top:1px solid #333;
+				padding-top:10px;
+				text-align:center;	
+}
+.footer-links{
+	          margin-top:10px;	
+}
+.footer-links a{
+	            color:#aaa;
+				text-decoration:none;
+				margin:0 10px;
+				font-size:14px;	
+}
+.footer-links a:hover{
+	                  text-decoration:underline;
+}
+</style>
+</head>
+<body><!-- Navbar -->
+<div class="w3-bar w3-white w3-card w3-large w3-padding" style="display:flex; justify-content:space-between; align-items:center; padding:0 20px; height:60px;">
+  <div style="display:flex; align-items:center;">
+  <a href="#" class="w3-bar-item">
+    <img src="photo/logo.png" alt="logo" style="height:50px;width:60px;">
+  </a>
+  </div>
+  
+  <div style="display:flex; justify-content:center; flex:1; gap:15px;">  
+  <a href="index.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+  <a href="hotels.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+  <a href="newdining.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+  <a href="offers.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+  <a href="membership.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+  <a href="wellness1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+  <a href="contact1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+  </div>
+  
+  
+  <div class="w3-right w3-hide-small" style="display:flex; align-items:center; gap:10px;">
+    <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+    <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+  </div>
+
+
+
+  <div class="w3-dropdown-hover w3-right w3-hide-medium w3-hide-large">
+    <button class="w3-button" style="color:#d4af37;">☰ Menu</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+      <a href="newdining.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+      <a href="wellness1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+      <a href="contact1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+      <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+      <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+    </div>
+  </div>
+</div>
+
+<!-- contact Section -->
+<div class="contact-bg">
+  <div style="display: flex; align-items: center; color: white; font-weight: bold; font-size: 25px; font-style: italic; font-family: 'georgia', serif; position: absolute; bottom: 60px; left: 20px;">
+    <span style="display: inline-block; height: 2px; width: 70px; background-color: white; margin-right: 15px;"></span>
+    <h2 style="font-family: 'times new roman', serif;">CONTACT</h2>
+  </div>
+</div>
+
+<div class="w3-container">
+<div class="wrapper">
+<div class="section-title-container">
+<h2 class="section-title" style="font-family: 'times new roman', serif;">GET IN TOUCH</h2>
+</div>
+</div>
+</div>
+
+<div class="w3-container1">
+
+  <!-- Heading Section -->
+  <div class="center-heading">
+    <h2  style="font-family: 'times new roman', serif;">WORLDWIDE RESERVATION CENTRE</h2>
+    <p  style="font-family: 'times new roman', serif;">Taj Hotel Reservations Worldwide Centre is accessible 24/7. Toll-free contact numbers are below.</p>
+  </div>33
+  
+
+  <!-- Contact Information Table -->
+  <div class="contact-table w3-card-2 w3-white w3-padding-large">
+
+    <div class="contact-row">
+      <div class="contact-label"  style="font-family: 'times new roman', serif;">Toll-free India</div>
+      <div  style="font-family: 'times new roman', serif;">1–800–111–825</div>
+    </div>
+
+    <div class="contact-row">
+      <div class="contact-label"  style="font-family: 'times new roman', serif;">India Network</div>
+      <div  style="font-family: 'times new roman', serif;">0091–22–6601–1825</div>
+    </div>
+
+    <div class="contact-row">
+      <div class="contact-label"  style="font-family: 'times new roman', serif;">USA & Canada</div>
+      <div  style="font-family: 'times new roman', serif;">1–866–969–1825</div>
+    </div>
+
+    <div class="contact-row">
+      <div class="contact-label"  style="font-family: 'times new roman', serif;">Bahrain Toll Free</div>
+      <div  style="font-family: 'times new roman', serif;">80004866</div>
+    </div>
+
+    <div class="contact-row">
+      <div class="contact-label"  style="font-family: 'times new roman', serif;">Brazil Toll Free</div>
+      <div  style="font-family: 'times new roman', serif;">8000381422</div>
+    </div>
+
+    <div class="contact-row">
+      <div class="contact-label"  style="font-family: 'times new roman', serif;">Egypt Toll Free</div>
+      <div  style="font-family: 'times new roman', serif;">8000000485</div>
+    </div>
+
+    <div class="contact-row">
+      <div class="contact-label"  style="font-family: 'times new roman', serif;">United Arab Emirates (UAE) Toll Free:</div>
+      <div  style="font-family: 'times new roman', serif;">800-035-702-467</div>
+    </div>
+
+    <div class="contact-row">
+      <div class="contact-label"  style="font-family: 'times new roman', serif;">Other countries</div>
+      <div  style="font-family: 'times new roman', serif;">00–800–4–588–1–825</div>
+    </div>
+
+  </div>
+
+  <!-- Note -->
+  <div class="note"  style="font-family: 'times new roman', serif;">
+    *Local / STD charges as applicable
+  </div>
+
+</div>
+
+<div class="form-container w3-white w3-padding-large w3-round-large">
+    <div class="w3-center">
+      <h2 style="letter-spacing: 1px; font-weight: normal; font-family: 'times new roman', serif;">
+        <span style="border-bottom: 1px solid #ccc; font-family: 'times new roman', serif;">CARE@TAJNESS</span>
+      </h2>
+      <p style="font-family: 'times new roman', serif;">We take pride in crafting moments that stay with you forever. Share your thoughts with us.</p>
+    </div>
+
+    <div class="w3-center w3-margin-top">
+      <button class="tab-btn active" onclick="toggleTab('feedback')" style="font-family: 'times new roman', serif;">FEEDBACK</button>
+      <button class="tab-btn" onclick="toggleTab('suggestion')" style="font-family: 'times new roman', serif;">SUGGESTION</button>
+    </div>
+
+    <!-- Form -->
+    <div id="form-section" class="w3-margin-top">
+      <div class="w3-row-padding">
+        <div class="w3-half">
+          <label style="font-family: 'times new roman', serif;">Name*</label>
+          <input type="text" required>
+        </div>
+        <div class="w3-half">
+          <label style="font-family: 'times new roman', serif;">Email*</label>
+          <input type="email" required>
+        </div>
+      </div>
+
+      <div class="w3-row-padding">
+        <div class="w3-half">
+          <label style="font-family: 'times new roman', serif;">Mobile Number*</label>
+          <input type="text" placeholder="+91 XXXXXXXXXX" required>
+        </div>
+        <div class="w3-half">
+          <label style="font-family: 'times new roman', serif;">Hotel</label>
+            <input type="text" placeholder="Hotel" required>
+          </div>
+        
+      </div>
+
+      <div class="w3-row-padding">
+        <div class="w3-half">
+          <label style="font-family: 'times new roman', serif;">Date of Stay</label>
+          <input type="date">
+        </div>
+        <div class="w3-half">
+          <!-- Optional extra field -->
+        </div>
+      </div>
+
+      <div class="w3-row">
+        <label style="font-family: 'times new roman', serif;">Comments</label>
+        <textarea rows="4"></textarea>
+      </div>
+
+      <div class="w3-margin-top"  style="font-family: 'times new roman', serif;">
+        <input type="checkbox" required > I have read and agree to the Privacy Policy and Terms & Conditions
+      </div>
+
+      <div class="w3-center w3-margin-top">
+        <button class="submit-btn" style="font-family: 'times new roman', serif;">SUBMIT</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleTab(tabName) {
+      const buttons = document.querySelectorAll(".tab-btn");
+      buttons.forEach(btn => btn.classList.remove("active"));
+
+      if (tabName === "feedback") {
+        buttons[0].classList.add("active");
+      } else {
+        buttons[1].classList.add("active");
+      }
+    }
+  </script>
+  
+  <div class="w3-container3 neupass-section">
+    <div class="neupass-heading" style="font-family: 'times new roman', serif;">
+      NEUPASS MEMBERSHIP PROGRAM
+    </div>
+
+    <div class="neupass-text">
+      <p style="font-family: 'times new roman', serif;">We value the relationship we share with you, as our esteemed NeuPass member.<br>
+      If you have any queries or concerns, kindly call us on</p>
+    </div>
+
+    <div class="neupass-contact">
+      <p style="font-family: 'times new roman', serif;"><b>Phone:</b> 1800 202 8282</p>
+      <p style="font-family: 'times new roman', serif;">or write us to <b>customercare@tataneu.com</b></p>
+    </div>
+  </div>
+  
+ <div class="w3-center w3-xxlarge w3-padding-32" style="font-family: 'times new roman', serif;">OUR MARQUEE OFFERINGS</div>
+
+  <!-- Offering 1 -->
+  <div class="offering-container">
+    <div class="offering-image">
+      <img src="photo/timeless.png" alt="Wedding 1">
+    </div>
+    <div class="offering-text">
+      <h3 style="font-family: 'times new roman', serif;">TIMELESS WEDDINGS</h3>
+      <p style="font-family: 'times new roman', serif;">Phone: +91 22 6665 1316</p>
+      <p style="font-family: 'times new roman', serif;">Email: timelessweddings@ihcltata.com</p>
+    </div>
+  </div>
+
+  <!-- Offering 2 -->
+  <div class="offering-container">
+    <div class="offering-image">
+      <img src="photo/program.png" alt="Wedding 2">
+    </div>
+    <div class="offering-text">
+      <h3 style="font-family: 'times new roman', serif;">EPICURE PROGRAMS</h3>
+      <p style="font-family: 'times new roman', serif;">Phone: +91 22 6665 1212</p>
+      <p style="font-family: 'times new roman', serif;">Email: epicure@ihcltata.com</p>
+    </div>
+  </div>
+
+  <!-- Offering 3 -->
+  <div class="offering-container">
+    <div class="offering-image">
+      <img src="photo/chambering.png" alt="Wedding 3">
+    </div>
+    <div class="offering-text">
+      <h3 style="font-family: 'times new roman', serif;">THE CHAMBERS</h3>
+      <p style="font-family: 'times new roman', serif;">Phone: +91 22 6665 3434</p>
+      <p style="font-family: 'times new roman', serif;">Email: chambers@ihcltata.com</p>
+    </div>
+  </div>
+
+  <!-- Offering 4 -->
+  <div class="offering-container">
+    <div class="offering-image">
+      <img src="photo/luxury.png" alt="Wedding 4">
+    </div>
+    <div class="offering-text">
+      <h3 style="font-family: 'times new roman', serif;">EVENTS AND CONFRENCES</h3>
+      <p style="font-family: 'times new roman', serif;">Phone: +91 22 6665 4545</p>
+      <p style="font-family: 'times new roman', serif;">Email: meeting@ihcltata.com</p>
+    </div>
+  </div>
+  
+  <div class="contact-section">
+    <!-- Pressroom -->
+    <div class="contact-box">
+      <h3 style="font-family: 'times new roman', serif;">PRESSROOM</h3>
+      <p style="font-family: 'times new roman', serif;">Phone : +91 22 6137 1947</p>
+      <p style="font-family: 'times new roman', serif;">kirti.dhingra@ihcltata.com</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Business Development -->
+    <div class="contact-box">
+      <h3 style="font-family: 'times new roman', serif;">BUSINESS DEVELOPMENT</h3>
+      <p style="font-family: 'times new roman', serif;">Phone : +91 22 6137 1720</p>
+      <p style="font-family: 'times new roman', serif;">development@tajhotels.com</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Investor Relations -->
+    <div class="contact-box">
+      <h3 style="font-family: 'times new roman', serif;">INVESTOR RELATIONS</h3>
+      <p style="font-family: 'times new roman', serif;">Phone : +91 22 6639 5515</p>
+      <p style="font-family: 'times new roman', serif;"style="font-family: 'times new roman', serif;">beejal.desai@ihcltata.com</p>
+    </div>
+  </div>
+  
+  <div class="careers-section w3-animate-opacity">
+  <h2 style="font-family: 'times new roman', serif;">CAREERS</h2>
+  <p style="font-family: 'times new roman', serif;">
+    We are always on the lookout for exceptional talent to join our team at both Taj Hotels and our corporate offices. Should you wish to become a part of the organisation, you can write in with your resume to...
+  </p>
+  <a href="#" style="font-family: 'times new roman', serif;">KNOW MORE</a>
+  <div class="email" style="font-family: 'times new roman', serif;">careers@ihcltata.com</div>
+</div>
+
+<div class="registered-office w3-animate-opacity">
+  <h2 style="font-family: 'times new roman', serif;">REGISTERED OFFICE</h2>
+  <p style="font-family: 'times new roman', serif;">Mandlik House,</p>
+  <p style="font-family: 'times new roman', serif;">Mandlik Road, Mumbai,</p>
+  <p style="font-family: 'times new roman', serif;">
+    Maharashtra 400 001 India 
+    <a href="#" class="map-link">View map</a>
+  </p>
+  <p style="font-family: 'times new roman', serif;">Phone: +91 22-6137-1710</p>
+  <p class="email" style="font-family: 'times new roman', serif;">investorrelations@tajhotels.com</p>
+</div>
+
+ <!-- ENHANCED FOOTER -->
+		
+	<footer class="w3-black w3-padding-64 w3-center" style="color: #ccc; font-family: 'Georgia', serif;">
+
+	  <div class="w3-row-padding w3-padding-32 w3-container" style="max-width: 1400px; margin: auto; text-align: left;">
+		
+		<!-- ABOUT TAJ -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">About Taj Hotels</h4>
+		  <p>Taj Hotels is a symbol of Indian hospitality with a rich legacy of luxury and excellence. Established in 1903, the brand combines regal heritage with modern luxury across India and globally.</p>
+		</div>
+
+		<!-- QUICK LINKS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Quick Links</h4>
+		  <p><a href="index.html" class="w3-text-white">Destinations</a></p>
+		  <p><a href="hotels.html" class="w3-text-white">Hotels</a></p>
+		  <p><a href="newdining.html" class="w3-text-white">Dining</a></p>
+		  <p><a href="offers.html" class="w3-text-white">Offers</a></p>
+		  <p><a href="membership.html" class="w3-text-white">Membership</a></p>
+		  <p><a href="booking1.html" class="w3-text-white">Book A Stay</a></p>
+		</div>
+
+		<!-- POPULAR DESTINATIONS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Popular Destinations</h4>
+		  <p>Goa</p>
+		  <p>Mumbai</p>
+		  <p>Jaipur</p>
+		  <p>New Delhi</p>
+		  <p>London</p>
+		  <p>New York</p>
+		</div>
+
+		<!-- HOTEL BRANDS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Our Brands</h4>
+		  <p>Taj</p>
+		  <p>Vivanta</p>
+		  <p>SeleQtions</p>
+		  <p>Ginger</p>
+		  <p>Tree of Life</p>
+		  <p>St. James' Court</p>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin: 40px 0;">
+
+	  <!-- NEWSLETTER AND CONTACT -->
+	  <div class="w3-container w3-padding-16" style="max-width: 1200px; margin: auto;">
+
+		<!-- Newsletter Signup -->
+		<div style="margin-bottom: 30px;">
+		  <h4 style="color: #FFCC33;">Subscribe to our Newsletter</h4>
+		  <p>Stay updated with exclusive offers and luxury experiences.</p>
+		  <input type="email" placeholder="Enter your email" style="padding:10px; width:300px; border-radius: 20px; border:none; margin-right:10px;">
+		  <button style="padding:10px 20px; border:none; border-radius: 20px; background-color:#FFCC33; font-weight: bold;">Subscribe</button>
+		</div>
+
+		<!-- Contact Info & Social -->
+		<div class="w3-row-padding w3-center" style="margin-top: 20px;">
+		  <div class="w3-half">
+			<h5>Contact Us</h5>
+			<p>Email: support@tajhotels.com</p>
+			<p>Phone: +91 22 6601 1825</p>
+			<p>Corporate Office: Mumbai, India</p>
+		  </div>
+		  <div class="w3-half">
+			<h5>Follow Us</h5>
+			<p>
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-youtube"></i></a>
+			</p>
+		  </div>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin-top: 40px;">
+	  <p style="color: #999;">&copy; 2025 Taj Hotels. All rights reserved. | <a href="#" class="w3-text-orange">Privacy Policy</a> | <a href="#" class="w3-text-orange">Terms of Service</a></p>
+	</footer>
+</body>
+</html>

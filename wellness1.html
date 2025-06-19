@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>J Wellness Circle Spa</title>
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    
+	.culinary-bg {
+      background-image: url('https://cdn.sanity.io/images/ocl5w36p/prod5/8e64830f061f2ecfc3f2f3dabd0cfec3e9469936-3840x1860.jpg?w=1024&auto=format&dpr=2');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      position: relative;
+      z-index: 1; 
+    }
+
+    .w3-bar {
+      position: fixed;
+      width: 100%;
+      z-index: 10000; 
+    }
+
+	
+	
+    .w3-dropdown-content {
+      position: fixed !important; 
+      top: 60px; 
+      right: 10px; 
+      z-index: 10001; 
+      display: none; 
+    }
+
+    .w3-dropdown-hover:hover .w3-dropdown-content {
+      display: block !important; 
+    }
+	
+    .spa-title {
+      text-align: center;
+      font-size: 36px;
+      letter-spacing: 2px;
+      margin-top: 20px;
+      color: #4c3e3e;
+    }
+    .spa-container {
+      max-width: 1100px;
+      margin: 40px auto;
+	  background-color: #f9f2ef;
+    }
+    .spa-text {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.7;
+    }
+    
+	.spa-section {
+      margin-left: 100px ;
+	 
+    }
+
+    .spa-text {
+      color: #4a4a4a;
+      line-height: 1.8;
+      font-size: 16px;
+      text-align: left;
+      padding:20px;
+    }
+
+    img {
+      width: 90%;
+      border-radius: 6px;
+    }
+	.image-hover {
+  overflow: hidden;
+}
+.image-hover img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.image-hover:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+.text-block {
+      color: #4d4d4d;
+    }
+
+    .text-block h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .text-block p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    @media screen and (max-width: 768px) {
+      .w3-row .w3-col {
+        width: 100% !important;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+	.line { 
+display: inline-block; width: 50px;
+ height: 1px;
+ background: #333;
+ margin-right: 15px;
+ vertical-align: middle;
+ }
+    h1 { 
+display: inline-block;
+ font-size: 32px;
+ margin: 0;
+ }
+    p { 
+color: #555; 
+font-size: 16px;
+ line-height: 1.6; 
+}
+.gift-section {
+      background: linear-gradient(to right, #f5eae9, #fdf8f6);
+      font-family: 'Playfair Display', serif;
+    }
+    .buy-btn {
+      background-color: #c58c5f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+    .buy-btn:hover {
+      background-color: #a66f44;
+    }
+	.footer{
+      background-color:#111;
+	  color:#fff;
+	  padding:40px 20px;
+	  
+}
+.footer-top{
+	        display:flex;
+			flex-wrap:wrap;
+			justify-content:space-between;
+}
+.subscribe input{
+	           padding:10px;
+			   margin-right:10px;
+			   border:none;
+			   border-radius:4px;	
+}
+.subscribe button{
+	            padding:10px 20px;
+				background-color:#888;
+				color:white;
+				border:none;
+				border-radius:4px;	
+}
+.contact-info,.quick-links{
+	                       margin-top:20px;
+						   max-width:300px;	
+}
+.quick-links ul{
+	            list-style:none;
+				padding:0;	
+}
+.quick-links li{
+	            margin-bottom:5px;	
+}
+.brands{
+	    margin-top:40px;
+		border-top:1px solid #333;
+		padding-top:20px;
+		text-align:center;	 
+}
+.footer-bottom{
+	            margin-top:30px;
+				border-top:1px solid #333;
+				padding-top:10px;
+				text-align:center;	
+}
+.footer-links{
+	          margin-top:10px;	
+}
+.footer-links a{
+	            color:#aaa;
+				text-decoration:none;
+				margin:0 10px;
+				font-size:14px;	
+}
+.footer-links a:hover{
+	                  text-decoration:underline;
+}
+
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+<div class="w3-bar w3-white w3-card w3-large w3-padding" style="display:flex; justify-content:space-between; align-items:center; padding:0 20px; height:60px;">
+  <div style="display:flex; align-items:center;">
+  <a href="#" class="w3-bar-item">
+    <img src="photo/logo.png" alt="logo" style="height:50px;width:60px;">
+  </a>
+  </div>
+  
+  <div style="display:flex; justify-content:center; flex:1; gap:15px;">  
+  <a href="index.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+  <a href="hotels.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+  <a href="newdining.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+  <a href="offers.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+  <a href="membership.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+  <a href="wellness1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+  <a href="contact1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+  </div>
+  
+  
+  <div class="w3-right w3-hide-small" style="display:flex; align-items:center; gap:10px;">
+    <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+    <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+  </div>
+
+  <div class="w3-dropdown-hover w3-right w3-hide-medium w3-hide-large">
+    <button class="w3-button" style="color:#d4af37;">☰ Menu</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+      <a href="newdining.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+      <a href="wellness1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+      <a href="contact1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+      <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+      <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+    </div>
+  </div>
+</div>
+
+<!-- Culinary Section -->
+<div class="culinary-bg">
+  <div style="display: flex; align-items: center; color: white; font-weight: bold; font-size: 25px; font-style: italic; font-family: 'georgia', serif; position: absolute; bottom: 60px; left: 20px;">
+    <span style="display: inline-block; height: 2px; width: 70px; background-color: white; margin-right: 15px;"></span>
+    <h2 style="font-family: 'times new roman', serif;">J WELLNESS CIRCLE</h2>
+  </div>
+</div>
+
+  
+
+<div style="text-align: center; padding: 100px 20px; ">
+  <h1 style="font-size: 36px; letter-spacing: 2px; color: #333; font-family: 'times new roman', serif; position: relative; display: inline-block; padding: 0px 20px;">DISCOVER HARMONY WITHIN</h1>
+
+  <p style="margin-top: 20px; font-size: 18px; color: #666; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; font-family: 'times new roman', serif;">
+    Begin a transformative journey into holistic wellness and immerse yourself in time-honoured practices of Indian healing techniques.
+  </p>
+</div>
+	
+	<div class="w3-container spa-section">
+    <div class="w3-row-padding">
+      <div class="w3-half image-hover">
+        <img src="https://cdn.sanity.io/images/ocl5w36p/prod5/0c2691b89803a49aad1b5666a2a1cba95251ee6b-1234x960.png?w=480&auto=format&dpr=2" alt="Spa Ayurvedic Image">
+        
+      </div>
+      <div class="w3-half spa-text">
+        <p style="font-family: 'times new roman', serif;">
+          Discover the timeless wisdom of Ayurvedic<br>
+          practices at J Wellness Circle, where we<br>
+          guide you on a journey towards balance<br>
+          and rejuvenation. Our holistic approach to<br>
+          wellness encompasses soothing<br>
+          treatments, nurturing therapies and a<br>
+          carefully curated selection of products<br>
+          designed to harmonize with the five<br>
+          elements – Akash, Vayu, Agni, Jal and<br>
+          Prithvi. Immerse yourself in serene scents<br>
+          and sounds as we lead you towards the<br>
+          alignment of mind, body and soul.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="spa-container w3-row-padding w3-margin-top">
+    <h2 class="spa-title" style="font-family: 'times new roman', serif;">— J WELLNESS CIRCLE SPA —</h2>
+  
+    <div class="w3-row-padding w3-margin-top">
+      <div class="w3-half image-hover">
+        <img src="https://cdn.sanity.io/images/ocl5w36p/prod5/e731769a72be9a51c7e438928387001ab034679a-1234x836.jpg?w=3840&auto=format&dpr=2" alt="Spa Massage" style="width:100%; border-radius: 8px;">
+      </div>
+      <div class="w3-half spa-text">
+        <p style="font-family: 'times new roman', serif;">Welcome to J Wellness Circle Spa, an oasis of luxury<br>
+		where every detail is crafted to elevate your senses and<br>
+		rejuvenate your spirit. Indulge in a bespoke journey of wellness <br>
+		inspired by Ayurveda. From soothing massages to revitalizing facials,<br>
+		each treatment is thoughtfully designed to restore harmony to the mind, body and soul.</p>
+
+        <p>As you surrender to the gentle touch of our skilled therapists,<br>
+		feel the stress and tension melt away, leaving you refreshed and renewed.<br>
+		Whether you seek a moment of relaxation or a comprehensive wellness treatment,<br>
+		our J Wellness Circle Spa is where your ultimate indulgence awaits.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="w3-content w3-padding-64" style="max-width:1200px">
+    <div class="w3-row w3-center w3-padding-16">
+      <!-- Left Text Column -->
+      <div class="w3-col l6 m6 s12 w3-container text-block w3-left-align">
+        <h2 style="font-family: 'times new roman', serif;">— J WELLNESS <br> CIRCLE BLISS</h2>
+        <p style="font-family: 'times new roman', serif;">
+          Indulge in J Wellness Circle Bliss, a journey of serenity and luxury. 
+          Enjoy exclusive spa therapies, rejuvenating salon sessions, ...
+        </p>
+      </div>
+
+      <!-- Right Image Column without Hover -->
+      <div class="w3-col l6 m6 s12 w3-container">
+        <img src="https://cdn.sanity.io/images/ocl5w36p/prod5/cca45978dbe3f93a5aa2e7d587115f62bd7f0d9b-1726x960.jpg?w=1024&auto=format&dpr=2" class="w3-image w3-round-large" alt="J Wellness">
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-content w3-padding-64" style="max-width:1100px">
+  <div class="w3-row w3-padding-16">
+    <div class="w3-col l6 m6 s12">
+      <span class="line"></span><h1 style="font-family: 'times new roman', serif;">J WELLNESS<br>CIRCLE PRODUCTS</h1>
+    </div>
+    <div class="w3-col l6 m6 s12">
+      <p style="font-family: 'times new roman', serif;">
+        Our bespoke product range includes sublime therapeutic blends of pure essential oils, all-natural Indian herbs and active botanical ingredients.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-padding-64 gift-section">
+  <div class="w3-content w3-row w3-padding" style="max-width:1100px">
+    
+    <!-- LEFT IMAGE PART -->
+    <div class="w3-col l6 m6 s12 w3-center w3-padding">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod5/ea1ddd96410aec8c0a8e482ca5c858e1cb2863aa-1726x960.jpg?w=480&auto=format&dpr=2" alt="Gift Card" style="max-width:100%; border-radius:10px;">
+      <h3 style="color: #944; font-family: 'times new roman', serif;">GIVE THE GIFT OF <i>Wellbeing</i></h3>
+    </div>
+
+    <!-- RIGHT TEXT PART -->
+    <div class="w3-col l6 m6 s12 w3-padding">
+      <h2 style="margin-top:20px; font-family: 'times new roman', serif;">— TAJ EXPERIENCE<br>WELLNESS GIFT CARD</h2>
+      <p style="margin: 20px 0; font-family: 'times new roman', serif;">
+        Discover Tranquillity. Embark on a journey of relaxation and rejuvenation with our luxurious spa treatments and immerse yourself in a world of serenity.
+      </p>
+      <button class="buy-btn" style="font-family: 'times new roman', serif;">BUY NOW</button>
+    </div>
+
+  </div>
+</div>
+  
+    <div class="w3-content w3-padding-64" style="max-width:1100px">
+  <div class="w3-row w3-padding-16">
+    <div class="w3-col l6 m6 s12">
+      <span class="line"></span><h1 style="font-family: 'times new roman', serif;">INNERGISE<br>RETREATS</h1>
+    </div>
+    <div class="w3-col l6 m6 s12">
+      <p style="font-family: 'times new roman', serif;">
+       Unlock your innermost energy with Innergise stay retreats, designed to guide you on a holistic, transformative wellness journey.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Yoga Image Section -->
+<div class="w3-container w3-padding-64" style="background-color: #f1f1f1;">
+  <div class="w3-content w3-center">
+    <img src="https://cdn.sanity.io/images/ocl5w36p/prod5/880a17a90b5f71aa83aa8842014bf257269c1771-2880x1320.jpg?w=1024&auto=format&dpr=2" class="w3-image w3-card-4" style="max-width:100%; border-radius:8px;">
+  </div>
+</div>
+<!-- ENHANCED FOOTER -->
+		
+	<footer class="w3-black w3-padding-64 w3-center" style="color: #ccc; font-family: 'Georgia', serif;">
+
+	  <div class="w3-row-padding w3-padding-32 w3-container" style="max-width: 1400px; margin: auto; text-align: left;">
+		
+		<!-- ABOUT TAJ -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">About Taj Hotels</h4>
+		  <p>Taj Hotels is a symbol of Indian hospitality with a rich legacy of luxury and excellence. Established in 1903, the brand combines regal heritage with modern luxury across India and globally.</p>
+		</div>
+
+		<!-- QUICK LINKS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Quick Links</h4>
+		  <p><a href="index.html" class="w3-text-white">Destinations</a></p>
+		  <p><a href="hotels.html" class="w3-text-white">Hotels</a></p>
+		  <p><a href="newdining.html" class="w3-text-white">Dining</a></p>
+		  <p><a href="offers.html" class="w3-text-white">Offers</a></p>
+		  <p><a href="membership.html" class="w3-text-white">Membership</a></p>
+		  <p><a href="booking1.html" class="w3-text-white">Book A Stay</a></p>
+		</div>
+
+		<!-- POPULAR DESTINATIONS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Popular Destinations</h4>
+		  <p>Goa</p>
+		  <p>Mumbai</p>
+		  <p>Jaipur</p>
+		  <p>New Delhi</p>
+		  <p>London</p>
+		  <p>New York</p>
+		</div>
+
+		<!-- HOTEL BRANDS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Our Brands</h4>
+		  <p>Taj</p>
+		  <p>Vivanta</p>
+		  <p>SeleQtions</p>
+		  <p>Ginger</p>
+		  <p>Tree of Life</p>
+		  <p>St. James' Court</p>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin: 40px 0;">
+
+	  <!-- NEWSLETTER AND CONTACT -->
+	  <div class="w3-container w3-padding-16" style="max-width: 1200px; margin: auto;">
+
+		<!-- Newsletter Signup -->
+		<div style="margin-bottom: 30px;">
+		  <h4 style="color: #FFCC33;">Subscribe to our Newsletter</h4>
+		  <p>Stay updated with exclusive offers and luxury experiences.</p>
+		  <input type="email" placeholder="Enter your email" style="padding:10px; width:300px; border-radius: 20px; border:none; margin-right:10px;">
+		  <button style="padding:10px 20px; border:none; border-radius: 20px; background-color:#FFCC33; font-weight: bold;">Subscribe</button>
+		</div>
+
+		<!-- Contact Info & Social -->
+		<div class="w3-row-padding w3-center" style="margin-top: 20px;">
+		  <div class="w3-half">
+			<h5>Contact Us</h5>
+			<p>Email: support@tajhotels.com</p>
+			<p>Phone: +91 22 6601 1825</p>
+			<p>Corporate Office: Mumbai, India</p>
+		  </div>
+		  <div class="w3-half">
+			<h5>Follow Us</h5>
+			<p>
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-youtube"></i></a>
+			</p>
+		  </div>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin-top: 40px;">
+	  <p style="color: #999;">&copy; 2025 Taj Hotels. All rights reserved. | <a href="#" class="w3-text-orange">Privacy Policy</a> | <a href="#" class="w3-text-orange">Terms of Service</a></p>
+	</footer>
+</body>
+</html>

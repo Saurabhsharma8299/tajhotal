@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MEMBERSHIP</title>
+  <link rel="icon" href="taj.jfif" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- W3.CSS Framework -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    /* Adjust spacing for fixed header */
+    .content {
+      padding-top: 80px;
+    }
+	 .w3-bar {
+      position: fixed;
+      width: 100%;
+      z-index: 10000; 
+    }
+
+	
+	
+    .w3-dropdown-content {
+      position: fixed !important; 
+      top: 60px; 
+      right: 10px; 
+      z-index: 10001; 
+      display: none; 
+    }
+
+    .w3-dropdown-hover:hover .w3-dropdown-content {
+      display: block !important; 
+    }
+	
+    .w3-bar-item img {
+      vertical-align: middle;
+    }
+
+    .w3-bar .w3-button {
+      font-weight: bold;
+    }
+
+    .w3-orange:hover {
+      background-color: #e68a00 !important;
+    }
+
+    /* Make navbar appear lifted */
+    .w3-top {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+    }
+
+    /* Custom spacing classes */
+    .l1 { margin-left: 15px; }
+    .l2 { margin-left: 25px; }
+    .l3 { margin-left: 10px; }
+  </style>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("w3-hide");
+    }
+  </script>
+</head>
+
+<body>
+<!-- Navbar -->
+<div class="w3-bar w3-white w3-card w3-large w3-padding" style="display:flex; justify-content:space-between; align-items:center; padding:0 20px; height:60px;">
+  <div style="display:flex; align-items:center;">
+  <a href="#" class="w3-bar-item">
+    <img src="photo/logo.png" alt="logo" style="height:50px;width:60px;">
+  </a>
+  </div>
+  
+  <div style="display:flex; justify-content:center; flex:1; gap:15px;">  
+  <a href="index.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+  <a href="hotels.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+  <a href="newdining.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+  <a href="offers.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+  <a href="membership.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+  <a href="wellness1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+  <a href="contact1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+  </div>
+  
+  
+  <div class="w3-right w3-hide-small" style="display:flex; align-items:center; gap:10px;">
+    <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+    <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+  </div>
+
+  <div class="w3-dropdown-hover w3-right w3-hide-medium w3-hide-large">
+    <button class="w3-button" style="color:#d4af37;">☰ Menu</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+      <a href="wellness1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+      <a href="contact1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+      <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+      <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+    </div>
+  </div>
+</div>
+
+<!-- Banner Image -->
+<div class="w3-container w3-padding-0">
+  <img src="newyork.jpg" alt="Hotel Banner" class="w3-image" style="width:100%; max-height:500px; object-fit: cover;">
+</div>
+
+<!-- Panel Section -->
+<div class="w3-container w3-padding-32">
+  <div class="w3-panel w3-card w3-white w3-padding-32 w3-center">
+    <h2 class="w3-text-brown" style="font-family: 'times new roman', serif;">Epicure - Reward Yourself
+</h2>
+    <p style="font-family: 'times new roman', serif;">Welcome to the finest collection of hotels across the globe. Enjoy premium hospitality, exquisite dining, and unforgettable stays with Taj Hotels.Enjoy an array of unparalleled privileges and elevate your lifestyle like never before with Epicure memberships. Crafted for sheer indulgence, experience a diverse range of exceptional stays, unique dining options, wellness therapies and more.</p>
+    <a href="bookastay.html" class="w3-button w3-orange w3-round-large w3-margin-top">Book Your Stay Now</a>
+  </div>
+</div>
+
+<div class="w3-container w3-padding-32" style="position: relative; font-family: 'times new roman', serif;">
+  <h2 class="w3-text-brown" style="font-family: 'times new roman', serif;">Our Featured Properties</h2>
+
+  <!-- Scroll Buttons Positioned Over the Gallery -->
+  <button onclick="scrollGallery(-410)" class="w3-button w3-round-large w3-brown" style="position:absolute; top:50%; left:20px; transform:translateY(-50%); z-index:10;">
+    <i class="fa fa-chevron-left"></i>
+  </button>
+
+  <button onclick="scrollGallery(410)" class="w3-button w3-round-large w3-brown" style="position:absolute; top:50%; right:20px; transform:translateY(-50%); z-index:10;">
+    <i class="fa fa-chevron-right"></i>
+  </button>
+
+  <!-- Scroll Container -->
+  <div id="imageGallery" style="overflow-x: auto; white-space: nowrap; scrollbar-width: none; -ms-overflow-style: none;">
+    <style>
+      #imageGallery::-webkit-scrollbar { display: none; }
+    </style>
+
+    <!-- Gallery Items with <br> for paragraph wrapping -->
+    <div style="display: inline-block; width: 400px; margin-right: 20px;">
+      <img src="photo/member1.avif" alt="Hotel 1" style="width: 400px; height: 352px; object-fit: cover; font-family: 'times new roman', serif;">
+      <div style="width: 400px; height: 300px;" class="w3-light-white w3-padding">
+        <p><strong>ONE NIGHT STAY WITH BREAKFAST</strong><br>
+        Escape the ordinary and treat yourself to a luxurious one-<br>
+		night stay.
+        Whether you're seeking a <br>romantic getaway, business stopover,<br>
+        or a spontaneous city break, this is for you.<br>
+        Enjoy a complimentary gourmet breakfast<br>
+        with fruits, breads, and international favorites.<br>
+        More than just a stay—it’s an experience.</p>
+      </div>
+    </div>
+
+    <div style="display: inline-block; width: 400px; margin-right: 20px;">
+      <img src="photo/member2.avif" alt="Hotel 2" style="width: 400px; height: 400px; object-fit: cover;">
+      <div style="width: 400px; height: 300px;" class="w3-light-white w3-padding">
+        <p><strong>SET MEAL FOR TWO</strong><br>
+        A curated gourmet experience for two.<br>
+        Romantic settings, multi-course meals,<br>
+        and a fusion of regional & international flavors.<br>
+        Under the stars or in elegant dining halls,<br>
+        your table awaits with indulgent cuisine.</p>
+      </div>
+    </div>
+
+    <div style="display: inline-block; width: 400px; margin-right: 20px;">
+      <img src="photo/member3.avif" alt="Hotel 3" style="width: 400px; height: 400px; object-fit: cover;">
+      <div style="width: 400px; height: 300px;" class="w3-light-white w3-padding">
+        <p><strong>25% SAVINGS ON FOOD AND BEVERAGE</strong><br>
+        Enjoy 25% off at all hotel restaurants.<br>
+        Relish Indian thalis, Mediterranean meals,<br>
+        and chef-crafted seasonal specials.<br>
+        Dining luxury made more rewarding<br>
+        for food lovers and families alike.</p>
+      </div>
+    </div>
+
+    <div style="display: inline-block; width: 400px; margin-right: 20px;">
+      <img src="photo/member4.avif" alt="Hotel 4" style="width: 400px; height: 400px; object-fit: cover;">
+      <div style="width: 400px; height: 300px;" class="w3-light-white w3-padding">
+        <p><strong>SIXTY MINUTES SPA VOUCHERS</strong><br>
+        Revive yourself with 60-minute spa therapies.<br>
+        Aromatherapy, deep tissue, or Ayurvedic bliss<br>
+        in calming spa sanctuaries.<br>
+        Feel refreshed, relaxed, and rebalanced<br>
+        in every moment of wellness.</p>
+      </div>
+    </div>
+
+    <div style="display: inline-block; width: 400px; margin-right: 20px;">
+      <img src="photo/member5.avif" alt="Hotel 5" style="width: 400px; height: 400px; object-fit: cover;">
+      <div style="width: 400px; height: 300px;" class="w3-light-white w3-padding">
+        <p><strong>TAJ INNERCIRCLE GOLD/SILVER TIER</strong><br>
+        Unlock priority reservations & room upgrades.<br>
+        Enjoy late checkouts and exclusive dining perks.<br>
+        Earn rewards every stay and access events.<br>
+        Your loyalty deserves luxury and recognition.</p>
+      </div>
+    </div>
+
+    <div style="display: inline-block; width: 400px;">
+      <img src="photo/member6.avif" alt="Hotel 6" style="width: 400px; height: 400px; object-fit: cover;">
+      <div style="width: 400px; height: 300px;" class="w3-light-white w3-padding">
+        <p><strong>EXCLUSIVE ACCESS TAJ CLUB LOUNGES</strong><br>
+        Relax in private lounge elegance.<br>
+        Enjoy complimentary beverages, hors d'oeuvres,<br>
+        and quiet luxury for work or rest.<br>
+        Available only to our most valued guests.<br>
+        Welcome to the elite experience.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Membership Type Section -->
+<div class="w3-container w3-centered w3-padding-64">
+  <h2 class="w3-text-brown w3-center" style="font-family: 'times new roman', serif;">Membership Types</h2>
+  
+  <div class="w3-row-padding  w3-margin-top" style="display: flex; flex-wrap: wrap; gap: 150px;">
+
+   <!-- Gold Membership Card -->
+<div onclick="document.getElementById('regModal').style.display='block'" class="w3-third w3-card w3-hover-shadow" style="cursor:pointer; background-color: #ffebeb; border-left: 6px solid #d40000; border-radius: 8px;">
+  <img src="photo/membertype2.avif" alt="Gold Membership" style="width:100%; height: auto; border-radius: 8px 8px 0 0;">
+  <div class="w3-container w3-padding">
+    <h3 class="w3-text-red" style="font-family: 'times new roman', serif;">Gold Membership</h3>
+    <p style="font-family: 'times new roman', serif;">
+      <strong>Priority benefits</strong> for elite members:<br>
+      • Free room upgrades<br>
+      • Late check-outs<br>
+      • Invitations to exclusive events<br>
+      • Maximum reward points per stay<br>
+      • Premium dining access<br><br>
+      Ideal for frequent luxury travelers.
+    </p>
+  </div>
+</div>
+
+   <!-- Silver Membership Card -->
+<div onclick="document.getElementById('regModal').style.display='block'" class="w3-third w3-card w3-hover-shadow" style="cursor:pointer; background-color: #e6f0ff; border-left: 6px solid #0073e6; border-radius: 8px;">
+  <img src="photo/membertype.avif" alt="Silver Membership" style="width:100%; height: auto; border-radius: 8px 8px 0 0;">
+  <div class="w3-container w3-padding">
+    <h3 class="w3-text-blue" style="font-family: 'times new roman', serif;">Silver Membership</h3>
+    <p style="font-family: 'times new roman', serif;">
+      <strong>Smart value</strong> with generous benefits:<br>
+      • Special discounts on rooms<br>
+      • Dining privileges<br>
+      • Early check-in options<br>
+      • Loyalty rewards on every stay<br>
+      • Access to seasonal offers<br><br>
+      Perfect for budget-conscious luxury seekers.
+    </p>
+  </div>
+</div>
+
+    <!-- Text Block -->
+    <div class="w3-rest w3-padding-large" style="font-family: 'times new roman', serif;">
+      <h4 class="w3-text-brown" style="font-family: 'times new roman', serif;">Tailored for Every Traveler</h4>
+      <p style="font-family: 'times new roman', serif;">
+        Choose the plan that best suits your lifestyle.<br><br>
+        <strong>Gold</strong> offers a premium, all-access experience for those who seek the finest Taj privileges.<br><br>
+        <strong>Silver</strong> is designed for practical comfort, offering great value without compromising on quality.<br><br>
+        Both elevate your journey—your way.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Registration Modal -->
+<div id="regModal" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-top" style="max-width:600px">
+    <header class="w3-container w3-brown"> 
+      <span onclick="document.getElementById('regModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+      <h2>Membership Registration</h2>
+    </header>
+    <div class="w3-container w3-padding">
+      <form class="w3-container" action="submit_form.html" method="POST">
+        <label class="w3-text-brown"><b>Full Name</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" name="fullname" required>
+
+        <label class="w3-text-brown"><b>Email</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="email" name="email" required>
+
+        <label class="w3-text-brown"><b>Phone</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="tel" name="phone" required>
+
+        <label class="w3-text-brown"><b>Preferred Membership</b></label>
+        <select class="w3-select w3-border w3-margin-bottom" name="membership">
+          <option value="" disabled selected>Choose your plan</option>
+          <option value="Gold">Gold</option>
+          <option value="Silver">Silver</option>
+        </select>
+
+        <button class="w3-button w3-brown w3-margin-top" type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ENHANCED FOOTER -->
+		
+	<footer class="w3-black w3-padding-64 w3-center" style="color: #ccc; font-family: 'Georgia', serif;">
+
+	  <div class="w3-row-padding w3-padding-32 w3-container" style="max-width: 1400px; margin: auto; text-align: left;">
+		
+		<!-- ABOUT TAJ -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">About Taj Hotels</h4>
+		  <p>Taj Hotels is a symbol of Indian hospitality with a rich legacy of luxury and excellence. Established in 1903, the brand combines regal heritage with modern luxury across India and globally.</p>
+		</div>
+
+		<!-- QUICK LINKS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Quick Links</h4>
+		  <p><a href="index.html" class="w3-text-white">Destinations</a></p>
+		  <p><a href="hotels.html" class="w3-text-white">Hotels</a></p>
+		  <p><a href="dining.html" class="w3-text-white">Dining</a></p>
+		  <p><a href="offers.html" class="w3-text-white">Offers</a></p>
+		  <p><a href="membership.html" class="w3-text-white">Membership</a></p>
+		  <p><a href="bookastay.html" class="w3-text-white">Book A Stay</a></p>
+		</div>
+
+		<!-- POPULAR DESTINATIONS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Popular Destinations</h4>
+		  <p>Goa</p>
+		  <p>Mumbai</p>
+		  <p>Jaipur</p>
+		  <p>New Delhi</p>
+		  <p>London</p>
+		  <p>New York</p>
+		</div>
+
+		<!-- HOTEL BRANDS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Our Brands</h4>
+		  <p>Taj</p>
+		  <p>Vivanta</p>
+		  <p>SeleQtions</p>
+		  <p>Ginger</p>
+		  <p>Tree of Life</p>
+		  <p>St. James' Court</p>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin: 40px 0;">
+
+	  <!-- NEWSLETTER AND CONTACT -->
+	  <div class="w3-container w3-padding-16" style="max-width: 1200px; margin: auto;">
+
+		<!-- Newsletter Signup -->
+		<div style="margin-bottom: 30px;">
+		  <h4 style="color: #FFCC33;">Subscribe to our Newsletter</h4>
+		  <p>Stay updated with exclusive offers and luxury experiences.</p>
+		  <input type="email" placeholder="Enter your email" style="padding:10px; width:300px; border-radius: 20px; border:none; margin-right:10px;">
+		  <button style="padding:10px 20px; border:none; border-radius: 20px; background-color:#FFCC33; font-weight: bold;">Subscribe</button>
+		</div>
+
+		<!-- Contact Info & Social -->
+		<div class="w3-row-padding w3-center" style="margin-top: 20px;">
+		  <div class="w3-half">
+			<h5>Contact Us</h5>
+			<p>Email: support@tajhotels.com</p>
+			<p>Phone: +91 22 6601 1825</p>
+			<p>Corporate Office: Mumbai, India</p>
+		  </div>
+		  <div class="w3-half">
+			<h5>Follow Us</h5>
+			<p>
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-youtube"></i></a>
+			</p>
+		  </div>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin-top: 40px;">
+	  <p style="color: #999;">&copy; 2025 Taj Hotels. All rights reserved. | <a href="#" class="w3-text-orange">Privacy Policy</a> | <a href="#" class="w3-text-orange">Terms of Service</a></p>
+	</footer>
+
+ 
+
+<!-- JavaScript to Scroll -->
+<script>
+  function scrollGallery(distance) {
+    const gallery = document.getElementById("imageGallery");
+    gallery.scrollBy({
+      left: distance,
+      behavior: 'smooth'
+    });
+  }
+  
+   window.onclick = function(event) {
+    const modal = document.getElementById('regModal');
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>

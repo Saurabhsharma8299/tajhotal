@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HOTELS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="icon" href="taj.jfif" type="image/x-icon">
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("w3-hide");
+    }
+  </script>
+  <style>
+	  
+    *body, html { margin: 0; padding: 0;font-family:"font-family: 'times new roman', serif;" }
+
+    .scroll-container {
+	background-images:url("photo/bekal.avif")
+      overflow: hidden;
+      width: 100%;
+      height: 480px;
+      position: relative;
+    }
+
+     .w3-bar {
+      position: fixed;
+      width: 100%;
+      z-index: 10000; 
+    }
+
+	
+	
+    .w3-dropdown-content {
+      position: fixed !important; 
+      top: 60px; 
+      right: 10px; 
+      z-index: 10001; 
+      display: none; 
+    }
+
+    .w3-dropdown-hover:hover .w3-dropdown-content {
+      display: block !important; 
+    }
+	
+    .w3-padding-32 { padding-top: 0 !important; }
+
+    .main-content { margin-top: 60px; background-color: #f9f9f9; }
+
+    .gallery-img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .highlight-item {
+      display: inline-block;
+      margin-right: 30px;
+      text-align: center;
+      color: #333;
+      font-weight: bold;
+      width: 300px;
+    }
+
+    .country-name {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+
+    .facility-desc {
+      font-size: 14px;
+      color: #555;
+      font-weight: normal;
+    }
+
+    #imageGallery {
+      scrollbar-width: none;         /* Firefox */
+      -ms-overflow-style: none;      /* IE/Edge */
+    }
+
+    #imageGallery::-webkit-scrollbar {
+      display: none;    
+    }
+  </style>
+</head>
+
+<body>
+
+
+<!-- Navbar -->
+<div class="w3-bar w3-white w3-card w3-large w3-padding" style="display:flex; justify-content:space-between; align-items:center; padding:0 20px; height:60px;">
+  <div style="display:flex; align-items:center;">
+  <a href="#" class="w3-bar-item">
+    <img src="photo/logo.png" alt="logo" style="height:50px;width:60px;">
+  </a>
+  </div>
+  
+  <div style="display:flex; justify-content:center; flex:1; gap:15px;">  
+  <a href="index.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+  <a href="hotels.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+  <a href="newdining.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+  <a href="offers.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+  <a href="membership.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+  <a href="wellness1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+  <a href="contact1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+  </div>
+  
+  
+  <div class="w3-right w3-hide-small" style="display:flex; align-items:center; gap:10px;">
+    <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+    <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+  </div>
+
+
+  <div class="w3-dropdown-hover w3-right w3-hide-medium w3-hide-large">
+    <button class="w3-button" style="color:#d4af37;">☰ Menu</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+      <a href="wellness1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+      <a href="contact1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+      <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+      <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+    </div>
+  </div>
+</div>
+    <style>
+      .w3-row::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+
+    <div class="w3-col" style="min-width: 300px; padding-right: 16px;">
+      <img src="photo/sp1.avif" alt="Hotel 1" style="width: 100%; height: 450px; object-fit: cover; border-radius: 10px;">
+    </div>
+    
+</div>
+
+<!-- Text + Image Section -->
+<div class="w3-container w3-padding-32 " style="font-family: 'times new roman', serif;">
+  <div class="w3-card w3-white w3-round-large w3-row-padding w3-margin" style="display: flex; flex-wrap: wrap; align-items: center; font-family: 'times new roman', serif;">
+    <div class="w3-col m6 w3-padding">
+      <h3 style="font-family: 'times new roman', serif;">Five Star North Mumbai Hotel​</h3>
+      <p>
+        Enter a world of refined luxury at Taj Santacruz, Mumbai, one of the premier hotels close to Mumbai airport.
+        <details>
+          Our elegant rooms are the largest in the city and reflect a modern finesse. The serenity is carried forward with spa wellness, salon and swimming pool.
+        </details>
+      </p>
+      <a href="bookastay.html" class="w3-button w3-orange w3-round">Book Your Stay</a>
+    </div>
+    <div class="w3-col m6 w3-padding">
+      <img src="photo/fivestar.avif" alt="Luxury Hotel" style="width:100%; border-radius: 10px;">
+    </div>
+  </div>
+</div>
+
+<!-- Highlights -->
+<div class="w3-container w3-padding-32 " style="font-family: 'times new roman', serif;">
+  <div class="w3-card w3-white w3-round-large w3-padding w3-margin">
+    <h3 class="w3-text-black "style="font-family: 'times new roman', serif;">Highlights</h3>
+    <p style="font-family: 'times new roman', serif;">Discover unmatched luxury with breathtaking views, exquisite dining, personalized services, and world-class amenities.</p>
+
+    <div style="position: relative;">
+      <button onclick="scrollGallery('left')" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);
+              z-index: 1; background: rgba(0,0,0,0.5); border: none; color: white; padding: 10px 14px; cursor: pointer;">
+        &#10094;
+      </button>
+
+      <div id="imageGallery" style="overflow-x: auto; white-space: nowrap; scroll-behavior: smooth; padding: 20px 50px;">
+
+        <div class="highlight-item">
+          <img src="photo/wellness.avif" class="gallery-img" alt="1">
+          <p class="country-name">J Wellness Circle</p>
+          <p class="facility-desc">Holistic therapies & spa treatments.</p>
+        </div>
+
+        <div class="highlight-item">
+          <img src="photo/sp1.avif" class="gallery-img" alt="2">
+          <p class="country-name">India</p>
+          <p class="facility-desc">Iconic heritage hotels with modern luxury.</p>
+        </div>
+
+        <div class="highlight-item">
+          <img src="photo/sp2.avif" class="gallery-img" alt="3">
+          <p class="country-name">France</p>
+          <p class="facility-desc">Parisian elegance meets Indian hospitality.</p>
+        </div>
+
+        <div class="highlight-item">
+          <img src="photo/sp3.avif" class="gallery-img" alt="4">
+          <p class="country-name">Italy</p>
+          <p class="facility-desc">Art, wine, and comfort in the heart of Rome.</p>
+        </div>
+
+        <div class="highlight-item">
+          <img src="photo/sp4.avif" class="gallery-img" alt="5">
+          <p class="country-name">UAE</p>
+          <p class="facility-desc">Luxury in the desert with panoramic skyline views.</p>
+        </div>
+
+        <div class="highlight-item">
+          <img src="photo/sp5.avif" class="gallery-img" alt="6">
+          <p class="country-name">Japan</p>
+          <p class="facility-desc">Minimalist design with traditional hospitality.</p>
+        </div>
+
+        <div class="highlight-item">
+          <img src="photo/clumb.avif" class="gallery-img" alt="7">
+          <p class="country-name">USA</p>
+          <p class="facility-desc">Sophisticated stays in bustling cities.</p>
+        </div>
+
+        <div class="highlight-item">
+          <img src="photo/sp1.avif" class="gallery-img" alt="8">
+          <p class="country-name">Thailand</p>
+          <p class="facility-desc">Tropical comfort with cultural charm.</p>
+        </div>
+
+        <div class="highlight-item">
+          <img src="photo/fourawards.avif" class="gallery-img" alt="9">
+          <p class="country-name">Award Winning</p>
+          <p class="facility-desc">Recognized globally for excellence in hospitality.</p>
+        </div>
+
+      </div>
+
+      <button onclick="scrollGallery('right')" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);
+              z-index: 1; background: rgba(0,0,0,0.5); border: none; color: white; padding: 10px 14px; cursor: pointer;">
+        &#10095;
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ESME Unparalleled Offers -->
+<div class="w3-container w3-padding-32" style="font-family: 'times new roman', serif;">
+  <div class="w3-card w3-white w3-round-large w3-padding w3-margin">
+    <h3 class="w3-text-black" style="font-family: 'times new roman', serif;">ESME Unparalleled Offers</h3>
+    <p>Explore our curated experiences and limited-time offers across exquisite destinations.</p>
+
+    <div style="position: relative;">
+      <button onclick="scrollEsme('left')" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);
+              z-index: 1; overflow:hidden; background: rgba(0,0,0,0.5); border: none; color: white; padding: 10px 14px; cursor: pointer;">
+        &#10094;
+      </button>
+
+      <div id="esmeGallery" style="overflow-x: auto; white-space: nowrap; scroll-behavior: smooth; padding: 20px 50px;">
+        <!-- Offer Card 1 -->
+        <div class="highlight-item">
+          <img src="photo/bekal.avif" class="gallery-img" alt="Offer 1">
+          <p class="country-name">Romantic Escapes</p>
+          <p class="facility-desc">Exclusive couples’ retreats with spa indulgence.</p>
+        </div>
+
+        <!-- Offer Card 2 -->
+        <div class="highlight-item">
+          <img src="photo/bentota.avif" class="gallery-img" alt="Offer 2">
+          <p class="country-name">City Breaks</p>
+          <p class="facility-desc">Unwind with luxury in vibrant urban hubs.</p>
+        </div>
+
+        <!-- Offer Card 3 -->
+        <div class="highlight-item">
+          <img src="photo/alleey.avif" class="gallery-img" alt="Offer 3">
+          <p class="country-name">Beachside Bliss</p>
+          <p class="facility-desc">Sun, sand, and unmatched coastal luxury.</p>
+        </div>
+
+        <!-- Offer Card 4 -->
+        <div class="highlight-item">
+          <img src="photo/INNERSIGE.avif" class="gallery-img" alt="Offer 4">
+          <p class="country-name">Wellness Retreats</p>
+          <p class="facility-desc">Rejuvenate mind and body with holistic care.</p>
+        </div>
+
+        <!-- Offer Card 5 -->
+        <div class="highlight-item">
+          <img src="photo/clumb.avif" class="gallery-img" alt="Offer 5">
+          <p class="country-name">Culinary Journeys</p>
+          <p class="facility-desc">Savor signature dishes from world-class chefs.</p>
+        </div>
+
+        <!-- Offer Card 6 -->
+        <div class="highlight-item">
+          <img src="photo/bentota.avif" class="gallery-img" alt="Offer 6">
+          <p class="country-name">Family Getaways</p>
+          <p class="facility-desc">Fun-filled vacations for every generation.</p>
+        </div>
+
+        <!-- Offer Card 7 -->
+        <div class="highlight-item">
+          <img src="photo/sp8.avif" class="gallery-img" alt="Offer 7">
+          <p class="country-name">Festive Packages</p>
+          <p class="facility-desc">Celebrate festivals with luxurious traditions.</p>
+        </div>
+
+        <!-- Offer Card 8 -->
+        <div class="highlight-item">
+          <img src="photo/benaulm.avif" class="gallery-img" alt="Offer 8">
+          <p class="country-name">Adventure Trails</p>
+          <p class="facility-desc">Thrill-seeking stays near nature’s wonders.</p>
+        </div>
+      </div>
+
+      <button onclick="scrollEsme('right')" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);
+              z-index: 1; background: rgba(0,0,0,0.5); border: none; color: white; padding: 10px 14px; cursor: pointer;">
+        &#10095;
+      </button>
+    </div>
+  </div>
+</div>
+<!-- ENHANCED FOOTER -->
+		
+	<footer class="w3-black w3-padding-64 w3-center" style="color: #ccc; font-family: 'Georgia', serif;">
+
+	  <div class="w3-row-padding w3-padding-32 w3-container" style="max-width: 1400px; margin: auto; text-align: left;">
+		
+		<!-- ABOUT TAJ -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">About Taj Hotels</h4>
+		  <p>Taj Hotels is a symbol of Indian hospitality with a rich legacy of luxury and excellence. Established in 1903, the brand combines regal heritage with modern luxury across India and globally.</p>
+		</div>
+
+		<!-- QUICK LINKS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Quick Links</h4>
+		  <p><a href="index.html" class="w3-text-white">Destinations</a></p>
+		  <p><a href="hotels.html" class="w3-text-white">Hotels</a></p>
+		  <p><a href="dining.html" class="w3-text-white">Dining</a></p>
+		  <p><a href="offers.html" class="w3-text-white">Offers</a></p>
+		  <p><a href="membership.html" class="w3-text-white">Membership</a></p>
+		  <p><a href="bookastay.html" class="w3-text-white">Book A Stay</a></p>
+		</div>
+
+		<!-- POPULAR DESTINATIONS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Popular Destinations</h4>
+		  <p>Goa</p>
+		  <p>Mumbai</p>
+		  <p>Jaipur</p>
+		  <p>New Delhi</p>
+		  <p>London</p>
+		  <p>New York</p>
+		</div>
+
+		<!-- HOTEL BRANDS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Our Brands</h4>
+		  <p>Taj</p>
+		  <p>Vivanta</p>
+		  <p>SeleQtions</p>
+		  <p>Ginger</p>
+		  <p>Tree of Life</p>
+		  <p>St. James' Court</p>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin: 40px 0;">
+
+	  <!-- NEWSLETTER AND CONTACT -->
+	  <div class="w3-container w3-padding-16" style="max-width: 1200px; margin: auto;">
+
+		<!-- Newsletter Signup -->
+		<div style="margin-bottom: 30px;">
+		  <h4 style="color: #FFCC33;">Subscribe to our Newsletter</h4>
+		  <p>Stay updated with exclusive offers and luxury experiences.</p>
+		  <input type="email" placeholder="Enter your email" style="padding:10px; width:300px; border-radius: 20px; border:none; margin-right:10px;">
+		  <button style="padding:10px 20px; border:none; border-radius: 20px; background-color:#FFCC33; font-weight: bold;">Subscribe</button>
+		</div>
+
+		<!-- Contact Info & Social -->
+		<div class="w3-row-padding w3-center" style="margin-top: 20px;">
+		  <div class="w3-half">
+			<h5>Contact Us</h5>
+			<p>Email: support@tajhotels.com</p>
+			<p>Phone: +91 22 6601 1825</p>
+			<p>Corporate Office: Mumbai, India</p>
+		  </div>
+		  <div class="w3-half">
+			<h5>Follow Us</h5>
+			<p>
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-youtube"></i></a>
+			</p>
+		  </div>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin-top: 40px;">
+	  <p style="color: #999;">&copy; 2025 Taj Hotels. All rights reserved. | <a href="#" class="w3-text-orange">Privacy Policy</a> | <a href="#" class="w3-text-orange">Terms of Service</a></p>
+	</footer>
+
+
+
+<script>
+  function scrollGallery(direction) {
+    const container = document.getElementById("imageGallery");
+    const scrollAmount = 330;
+    container.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth"
+    });
+  }
+ 
+</script>
+
+</body>
+</html>

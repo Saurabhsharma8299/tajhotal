@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>taj dining page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .culinary-bg {
+      background-image: url('https://cdn.sanity.io/images/ocl5w36p/prod4/6a5b2fa52841e502e88b42bd04bad8a0e90e1d5d-3840x1860.jpg?w=1600&auto=format&dpr=2');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      position: relative;
+      z-index: 1; 
+    }
+
+    .w3-bar {
+      position: fixed;
+      width: 100%;
+      z-index: 10000; 
+    }
+
+	
+	
+    .w3-dropdown-content {
+      position: fixed !important; 
+      top: 60px; 
+      right: 10px; 
+      z-index: 10001; 
+      display: none; 
+    }
+
+    .w3-dropdown-hover:hover .w3-dropdown-content {
+      display: block !important; 
+    }
+	
+	.card {
+      background:white;
+      padding:20px;
+      text-align:center;
+      width:100%;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      border-radius:10px;
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+      cursor:pointer;
+    
+    }
+    .card:hover {
+      transform:scale(1.05);
+      box-shadow:0 10px 20px rgba(0,0,0,0.3);
+    }
+    .card img {
+      width:100%;
+      height:400px;
+      object-fit:cover;
+      border-radius:6px;
+    }
+    .card h3 {
+      margin:15px 0 10px;
+      font-size:1.1rem;
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+    }
+    .card p {
+      font-size:0.9rem;
+      color:#555;
+    }
+	
+	.restaurant-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 200px;
+  background-color: #fff;
+  
+}
+.left-text {
+  flex: 1;
+  padding-right: 40px;
+}
+.left-text hr {
+  width: 40px;
+  border: 1px solid #333;
+  margin-bottom: 10px;
+}
+.left-text h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  color: #333;
+}
+.right-text {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+}
+.card-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  
+}
+.carding{
+  width: 500px;
+  height:80%;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  float:left;
+  margin:20px;
+  padding:10px;
+}
+.card2{
+  width: 500px;
+  height:80%;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  float:left;
+  margin:20px;
+  padding:10px;
+}
+.image-hover {
+  overflow: hidden;
+}
+.image-hover img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.image-hover:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+.card-content {
+  padding: 15px;
+}
+.card-content h3 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+.card-content p {
+  font-size: 14px;
+  color: #444;
+}
+.gift-section {
+  padding: 40px;
+  text-align: center;
+ 
+}
+.main-heading {
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.gift-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+.gift-image img {
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.gift-text {
+  max-width: 500px;
+  text-align: left;
+}
+.gift-text h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.gift-text p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.gift-text a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #5a3e85;
+  text-decoration: none;
+  font-weight: bold;
+}
+.gift-image:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  transition-duration:1s;
+}
+.giftcard-section {
+  padding: 40px;
+  text-align:center;
+  font-family: 'Georgia', serif;
+}
+.giftcard-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.giftcard-text {
+  flex: 1;
+  max-width: 500px;
+}
+.giftcard-text h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+.giftcard-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.giftcard-text a {
+  color: #5a3e85;
+  text-decoration: none;
+  font-weight: bold;
+}
+.giftcard-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.giftcard-image:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  transition-duration:1s; 
+}
+	
+.footer{
+      background-color:#111;
+	  color:#fff;
+	  padding:40px 20px;
+	  
+}
+.footer-top{
+	        display:flex;
+			flex-wrap:wrap;
+			justify-content:space-between;
+}
+.subscribe input{
+	           padding:10px;
+			   margin-right:10px;
+			   border:none;
+			   border-radius:4px;	
+}
+.subscribe button{
+	            padding:10px 20px;
+				background-color:#888;
+				color:white;
+				border:none;
+				border-radius:4px;	
+}
+.contact-info,.quick-links{
+	                       margin-top:20px;
+						   max-width:300px;	
+}
+.quick-links ul{
+	            list-style:none;
+				padding:0;	
+}
+.quick-links li{
+	            margin-bottom:5px;	
+}
+.brands{
+	    margin-top:40px;
+		border-top:1px solid #333;
+		padding-top:20px;
+		text-align:center;	 
+}
+.footer-bottom{
+	            margin-top:30px;
+				border-top:1px solid #333;
+				padding-top:10px;
+				text-align:center;	
+}
+.footer-links{
+	          margin-top:10px;	
+}
+.footer-links a{
+	            color:#aaa;
+				text-decoration:none;
+				margin:0 10px;
+				font-size:14px;	
+}
+.footer-links a:hover{
+	                  text-decoration:underline;
+}
+
+
+	
+</style>
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+<div class="w3-bar w3-white w3-card w3-large w3-padding" style="display:flex; justify-content:space-between; align-items:center; padding:0 20px; height:60px;">
+  <div style="display:flex; align-items:center;">
+  <a href="#" class="w3-bar-item">
+    <img src="photo/logo.png" alt="logo" style="height:50px;width:60px;">
+  </a>
+  </div>
+  
+  <div style="display:flex; justify-content:center; flex:1; gap:15px;">  
+  <a href="index.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+  <a href="hotels.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+  <a href="newdining.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+  <a href="offers.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+  <a href="membership.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+  <a href="wellness1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+  <a href="contact1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+  </div>
+  
+  
+  <div class="w3-right w3-hide-small" style="display:flex; align-items:center; gap:10px;">
+    <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+    <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+  </div>
+
+
+
+  <div class="w3-dropdown-hover w3-right w3-hide-medium w3-hide-large">
+    <button class="w3-button" style="color:#d4af37;">☰ Menu</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+      <a href="wellness1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+      <a href="contact1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+      <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+      <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+    </div>
+  </div>
+</div>
+
+<!-- Culinary Section -->
+<div class="culinary-bg">
+  <div style="display: flex; align-items: center; color: white; font-weight: bold; font-size: 25px; font-style: italic; font-family: 'georgia', serif; position: absolute; bottom: 60px; left: 20px;">
+    <span style="display: inline-block; height: 2px; width: 70px; background-color: white; margin-right: 15px;"></span>
+    <h2 style="font-family: 'times new roman', serif;">A CULINARY LEGACY</h2>
+  </div>
+</div>
+
+<div style="text-align: center; padding: 100px 20px; ">
+  <h1 style="font-size: 36px; letter-spacing: 2px; color: #333; font-family: 'times new roman', serif; position: relative; display: inline-block; padding: 0px 20px;">FINE DINING AT TAJ RESTAURANT</h1>
+
+  <p style="margin-top: 20px; font-size: 18px; color: #666; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; font-family: 'times new roman', serif;">
+    Embark on a journey of exquisite experiences 
+    for the discerning connoisseur,
+    seamlessly woven together with impeccable service,
+    sophisticated ambience and masterful culinary artistry.
+  </p>
+</div>
+
+<!-- About Section -->
+<section class="w3-row-padding w3-center">
+
+  <!-- Card 1 -->
+  <div class="w3-col s12 m6 l4">
+    <div class="card">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod4/69c467744f7f1694331768d6d611bfc77582e36a-906x972.jpg?w=480&auto=format&dpr=2" alt="Chef">
+      <h3 style="font-family: 'times new roman', serif;">Celebrated Chefs</h3>
+      <p style="font-family: 'times new roman', serif;">A distinguished roster of world-class talent that embodies culinary excellence with expertise, creativity and precision</p>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="w3-col s12 m6 l4">
+    <div class="card">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod4/c0401c93116df10e12fea3bf9ea9662394fc9b80-906x972.jpg?w=480&auto=format&dpr=2" alt="Restaurant">
+      <h3 style="font-family: 'times new roman', serif;">Legendary Restaurants</h3>
+      <p style="font-family: 'times new roman', serif;">A collection of restaurants recognised for unparalleled dining experiences, authentic culinary traditions, exemplary service and immersive ambience.</p>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="w3-col s12 m6 l4">
+    <div class="card">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod4/a02ecadcd4a5ec735d7f0ae8d0d5b477ec1eb343-950x1020.jpg?w=480&auto=format&dpr=2" alt="Dish">
+      <h3 style="font-family: 'times new roman', serif;">Signature Recipes</h3>
+      <p style="font-family: 'times new roman', serif;">Each a testament to our culinary passion and honed over years of dedication. These dishes transcend mere sustenance and weave a tapestry of flavors that leaves a lasting impression.</p>
+    </div>
+  </div>
+</section>
+
+ <div class="restaurant-section">
+    <div class="left-text">
+      <hr>
+      <h1 style="font-family: 'times new roman', serif;">OUR LEGENDARY<br>RESTAURANT BRANDS</h1>
+    </div>
+    <div class="right-text">
+      <p style="font-family: 'times new roman', serif;">
+        Step into the realm of our culinary legends where a symphony of 
+		flavours enchants your taste buds, ambience embraces you in a tapestry
+		of elegance and the genuine warmth of our service leaves you feeling truly indulged.
+      </p>
+    </div>
+  </div>
+  
+  <div class="card-container2">
+  <div class="carding">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod4/61473605a24ea980577daa59a210a8080588a00b-1400x1120.jpg?w=768&auto=format&dpr=2" alt="Loya Restaurant">
+    </div>
+    <div class="card-content">
+      <h3 style="font-family: 'times new roman', serif;">LOYA</h3>
+      <p style="font-family: 'times new roman', serif;">
+        LOYA takes its diners on a gastronomic journey through North India’s diverse landscape, 
+		blending flavours from the Himalayan foothills, Punjab's flat terrains and Kashmir's 
+		snow-capped peaks. With its vibrant ambiance, accompanied by spirited folk music, Loya
+		creates an energetic, nostalgic yet contemporary dining experience, proudly showcasing
+		timeless techniques and heirloom ingredients.
+      </p>
+    </div>
+  </div>
+
+  <div class="card2">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod4/796122af6aaa3a0a625ad9fcaba8e4360195217c-1400x1120.jpg?w=768&auto=format&dpr=2" alt="Golden Dragon">
+    </div>
+    <div class="card-content">
+      <h3 style="font-family: 'times new roman', serif;">GOLDEN DRAGON</h3>
+      <p style="font-family: 'times new roman', serif;">
+        From its first location at The Taj Mahal Palace, Mumbai, Golden Dragon has introduced guests to
+		rarefied, divine experiences that are unparalleled. Known for its talented chefs and exotic
+		Sichuan and Cantonese preparations, Golden Dragon presents piquant delicacies crafted using 
+		authentic ingredients and culinary traditions, in a stunning environment.
+      </p>
+    </div>
+  </div>
+ 
+  
+  
+  <div class="carding">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod4/715be871eeb905434698a336ef47fdcd4e993a97-1400x1120.png?w=768&auto=format&dpr=2" alt="house of nomad">
+    </div>
+    <div class="card-content">
+      <h3 style="font-family: 'times new roman', serif;">HOUSE OF NOMAD</h3>
+      <p style="font-family: 'times new roman', serif;">
+        An enchanting realm of unexpected encounters,house of nomad captivates guests
+		with curiosity and excitement at every turn.Its flavour and elixirs,both familiar
+		and surprising evoke nostalgia while venturning into uncharted territories. 
+		The culinary delights at house of nomad take guests on a journey through time and taste,
+		making each visit an unforgettable  experience.
+      </p>
+    </div>
+  </div>
+
+  <div class="card2">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod4/789224e78325714ec0f8c2c52851a4e32818a248-1400x1120.jpg?w=768&auto=format&dpr=2" alt="wasabi by morimoto">
+    </div>
+    <div class="card-content">
+      <h3 style="font-family: 'times new roman', serif;">WASABI BY MORIMOTO</h3>
+      <p style="font-family: 'times new roman', serif;">
+        Wasabi by morimoto offers its guests authentic japanese culinary treasures from the 
+		repertoire of iron chef morimoto.The ingredients, including seafood and wasabi
+		are specially flown down from japan. With a selection of delicacies,each one of which 
+		is balanced, refined and authentic, the menu at this  culinary legend keeps expanding 
+		and is aimed at the evolved palate.
+      </p>
+    </div>
+	
+  </div>
+  
+   <div class="carding">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod4/3af8e12ebb290c16893a8312a6520dcf02b8c5d8-1400x1120.jpg?w=768&auto=format&dpr=2" alt="bombay brasserie">
+    </div>
+    <div class="card-content">
+      <h3 style="font-family: 'times new roman', serif;">BOMBAY BRASSERIE </h3>
+      <p style="font-family: 'times new roman', serif;">
+        Ever since its inception in 1982, Bombay Brasserie has been a showcase of diverse 
+		Indian flavours, textures and fragrances that all reflect in Bombay’s eclectic palate.
+		Built on a contemporary aesthetic and embellished with India’s cultural and culinary accents
+		, Bombay Brasserie serves meals in a brasserie-style setting, playing the perfect host to 
+		interactions ranging from high-energy gatherings to intimate dinners.
+      </p>
+    </div>
+  </div>
+
+  <div class="card2">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod4/cfca6c990b5571ac7f3be95cd9093112272c022a-1400x1120.png?w=768&auto=format&dpr=2" alt="shamiana ">
+    </div>
+    <div class="card-content">
+      <h3 style="font-family: 'times new roman', serif;">SHAMIANA</h3>
+      <p style="font-family: 'times new roman', serif;">
+        Inspired by the celebratory tents and event spaces, Shamiana invites its guests to
+		enjoy a diverse selection of culinary delights in a setting that evokes nostalgia.
+		Creating a symphony of flavours, it brings generational delicacies to the table, while 
+		also serving international favourites with its renowned warmth and panache.
+		A collection of legendary resaturants recognized for thier outstanding cuisine 
+      </p>
+    </div>
+  </div>
+ </div>	
+ 
+  <section class="gift-section">
+    <h2 class="main-heading" style="font-family: 'times new roman', serif;">— Giftable Dining Delights —</h2>
+    <div class="gift-content">
+      <div class="gift-image">
+        <img src="https://cdn.sanity.io/images/ocl5w36p/prod4/23ee30e79f9dca4e1ccb916f9ebd30ed192956a7-1400x979.jpg?w=768&auto=format&dpr=2" alt="Hampers Image">
+      </div>
+      <div class="gift-text">
+        <h3 style="font-family: 'times new roman', serif;">— Hampers</h3>
+        <p style="font-family: 'times new roman', serif;">A collection of thoughtfully curated hampers that are designed to convey your warmest thoughts and greetings with an array of gourmet selections.</p>
+       
+      </div>
+    </div>
+  </section>
+  
+  <section class="giftcard-section">
+    <div class="giftcard-content">
+      <div class="giftcard-text">
+        <h2 style="font-family: 'times new roman', serif;">— Taj Experiences Gift Cards</h2>
+        <p style="font-family: 'times new roman', serif;">
+          Offering a range of exclusive and exquisite dining experiences,
+          Taj Experiences Gift Cards make for a perfect present for your va...
+        </p>
+      
+      </div>
+      <div class="giftcard-image">
+        <img src="https://cdn.sanity.io/images/ocl5w36p/prod4/29ea05d58761635f5ee2ff674ea7d1637840a116-700x480.jpg?w=768&auto=format&dpr=2" alt="Taj Gift Card" />
+      </div>
+    </div>
+  </section>
+  
+ <!-- ENHANCED FOOTER -->
+		
+	<footer class="w3-black w3-padding-64 w3-center" style="color: #ccc; font-family: 'Georgia', serif;">
+
+	  <div class="w3-row-padding w3-padding-32 w3-container" style="max-width: 1400px; margin: auto; text-align: left;">
+		
+		<!-- ABOUT TAJ -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">About Taj Hotels</h4>
+		  <p>Taj Hotels is a symbol of Indian hospitality with a rich legacy of luxury and excellence. Established in 1903, the brand combines regal heritage with modern luxury across India and globally.</p>
+		</div>
+
+		<!-- QUICK LINKS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Quick Links</h4>
+		  <p><a href="index.html" class="w3-text-white">Destinations</a></p>
+		  <p><a href="hotels.html" class="w3-text-white">Hotels</a></p>
+		  <p><a href="newdining.html" class="w3-text-white">Dining</a></p>
+		  <p><a href="offers.html" class="w3-text-white">Offers</a></p>
+		  <p><a href="membership.html" class="w3-text-white">Membership</a></p>
+		  <p><a href="booking1.html" class="w3-text-white">Book A Stay</a></p>
+		</div>
+
+		<!-- POPULAR DESTINATIONS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Popular Destinations</h4>
+		  <p>Goa</p>
+		  <p>Mumbai</p>
+		  <p>Jaipur</p>
+		  <p>New Delhi</p>
+		  <p>London</p>
+		  <p>New York</p>
+		</div>
+
+		<!-- HOTEL BRANDS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Our Brands</h4>
+		  <p>Taj</p>
+		  <p>Vivanta</p>
+		  <p>SeleQtions</p>
+		  <p>Ginger</p>
+		  <p>Tree of Life</p>
+		  <p>St. James' Court</p>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin: 40px 0;">
+
+	  <!-- NEWSLETTER AND CONTACT -->
+	  <div class="w3-container w3-padding-16" style="max-width: 1200px; margin: auto;">
+
+		<!-- Newsletter Signup -->
+		<div style="margin-bottom: 30px;">
+		  <h4 style="color: #FFCC33;">Subscribe to our Newsletter</h4>
+		  <p>Stay updated with exclusive offers and luxury experiences.</p>
+		  <input type="email" placeholder="Enter your email" style="padding:10px; width:300px; border-radius: 20px; border:none; margin-right:10px;">
+		  <button style="padding:10px 20px; border:none; border-radius: 20px; background-color:#FFCC33; font-weight: bold;">Subscribe</button>
+		</div>
+
+		<!-- Contact Info & Social -->
+		<div class="w3-row-padding w3-center" style="margin-top: 20px;">
+		  <div class="w3-half">
+			<h5>Contact Us</h5>
+			<p>Email: support@tajhotels.com</p>
+			<p>Phone: +91 22 6601 1825</p>
+			<p>Corporate Office: Mumbai, India</p>
+		  </div>
+		  <div class="w3-half">
+			<h5>Follow Us</h5>
+			<p>
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-youtube"></i></a>
+			</p>
+		  </div>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin-top: 40px;">
+	  <p style="color: #999;">&copy; 2025 Taj Hotels. All rights reserved. | <a href="#" class="w3-text-orange">Privacy Policy</a> | <a href="#" class="w3-text-orange">Terms of Service</a></p>
+	</footer>
+</body>
+</html>

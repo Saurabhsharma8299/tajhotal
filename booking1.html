@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hotel Booking UI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+  .w3-bar {
+      position: fixed;
+      width: 100%;
+      z-index: 10000; 
+    }
+	.w3-dropdown-content {
+      position: fixed !important; 
+      top: 60px; 
+      right: 10px; 
+      z-index: 10001; 
+      display: none; 
+    }
+
+    .w3-dropdown-hover:hover .w3-dropdown-content {
+      display: block !important; 
+    }
+	
+    .box {
+      border: 1px solid #ccc;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .label {
+      font-weight: bold;
+    }
+    .value {
+      color: gray;
+    }
+    .modal-content {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+    }
+    .calendar-table td {
+      padding: 10px;
+      text-align: center;
+      border-radius: 4px;
+    }
+    .calendar-table td:hover {
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+    .selected {
+      background-color: #795548 !important;
+      color: white;
+    }
+	
+	.hotel-img {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .note {
+      color: grey;
+      font-size: 13px;
+    }
+
+    .w3-button.brown-btn {
+      background-color: #5D4037;
+      color: white;
+      width: 100%;
+    }
+	
+	.footer{
+      background-color:#111;
+	  color:#fff;
+	  padding:40px 20px;
+	  
+}
+.footer-top{
+	        display:flex;
+			flex-wrap:wrap;
+			justify-content:space-between;
+}
+.subscribe input{
+	           padding:10px;
+			   margin-right:10px;
+			   border:none;
+			   border-radius:4px;	
+}
+.subscribe button{
+	            padding:10px 20px;
+				background-color:#888;
+				color:white;
+				border:none;
+				border-radius:4px;	
+}
+.contact-info,.quick-links{
+	                       margin-top:20px;
+						   max-width:300px;	
+}
+.quick-links ul{
+	            list-style:none;
+				padding:0;	
+}
+.quick-links li{
+	            margin-bottom:5px;	
+}
+.brands{
+	    margin-top:40px;
+		border-top:1px solid #333;
+		padding-top:20px;
+		text-align:center;	 
+}
+.footer-bottom{
+	            margin-top:30px;
+				border-top:1px solid #333;
+				padding-top:10px;
+				text-align:center;	
+}
+.footer-links{
+	          margin-top:10px;	
+}
+.footer-links a{
+	            color:#aaa;
+				text-decoration:none;
+				margin:0 10px;
+				font-size:14px;	
+}
+.footer-links a:hover{
+	                  text-decoration:underline;
+}
+  </style>
+</head>
+<body><!-- Navbar -->
+<div class="w3-bar w3-white w3-card w3-large w3-padding" style="display:flex; justify-content:space-between; align-items:center; padding:0 20px; height:60px;">
+  <div style="display:flex; align-items:center;">
+  <a href="#" class="w3-bar-item">
+    <img src="photo/logo.png" alt="logo" style="height:50px;width:60px;">
+  </a>
+  </div>
+  
+  <div style="display:flex; justify-content:center; flex:1; gap:15px;">  
+  <a href="index.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+  <a href="hotels.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+  <a href="newdining.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+  <a href="offers.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+  <a href="membership.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+  <a href="wellness1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+  <a href="contact1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+  </div>
+  
+  
+  <div class="w3-right w3-hide-small" style="display:flex; align-items:center; gap:10px;">
+    <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+    <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+  </div>
+
+
+
+  <div class="w3-dropdown-hover w3-right w3-hide-medium w3-hide-large">
+    <button class="w3-button" style="color:#d4af37;">☰ Menu</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+      <a href="newdining.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+      <a href="#" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+      <a href="wellness1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+      <a href="contact1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+      <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+      <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+    </div>
+  </div>
+</div>
+<br><br><br><br>
+
+<div class="w3-container w3-padding">
+
+  <!-- TOP BOXES -->
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-third">
+      <div class="box w3-white w3-card" onclick="document.getElementById('guestModal').style.display='block'">
+        <div class="label"><i class="fa fa-user"></i> Guests</div>
+        <div class="value">1 adult, 0 children</div>
+      </div>
+    </div>
+
+    <div class="w3-third">
+      <div class="box w3-white w3-card" onclick="document.getElementById('calendarModal').style.display='block'">
+        <div class="label"><i class="fa fa-calendar"></i> Check-in</div>
+        <div class="value">Thu, Jun 12, 2025</div>
+      </div>
+    </div>
+
+    <div class="w3-third">
+      <div class="box w3-white w3-card" onclick="document.getElementById('calendarModal').style.display='block'">
+        <div class="label"><i class="fa fa-calendar"></i> Check-out</div>
+        <div class="value">Fri, Jun 13, 2025</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- GUEST MODAL -->
+<div id="guestModal" class="w3-modal">
+  <div class="w3-modal-content w3-animate-top w3-card-4 modal-content">
+    <header class="w3-container w3-light-grey" style="font-family: 'times new roman', serif;">
+      <span onclick="document.getElementById('guestModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+      <h3>Guests</h3>
+    </header>
+    <div class="w3-container" style="font-family: 'times new roman', serif;">
+      <p>Adults (Ages 12 or above)</p>
+      <button class="w3-button w3-border">-</button>
+      <span>1</span>
+      <button class="w3-button w3-border">+</button>
+
+      <p>Children (Ages 0–11)</p>
+      <button class="w3-button w3-border">-</button>
+      <span>0</span>
+      <button class="w3-button w3-border">+</button>
+    </div>
+    <footer class="w3-container w3-padding" style="font-family: 'times new roman', serif;">
+      <button class="w3-button w3-brown w3-right" onclick="document.getElementById('guestModal').style.display='none'">Done</button>
+    </footer>
+  </div>
+</div>
+
+<!-- CALENDAR MODAL -->
+<div id="calendarModal" class="w3-modal">
+  <div class="w3-modal-content w3-animate-top w3-card-4 modal-content">
+    <header class="w3-container w3-light-grey">
+      <span onclick="document.getElementById('calendarModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+      <h3>Select Dates</h3>
+    </header>
+    <div class="w3-container w3-center" style="font-family: 'times new roman', serif;">
+      <h4>June 2025</h4>
+      <table class="w3-table calendar-table" style="font-family: 'times new roman', serif;">
+        <tr class="w3-light-grey">
+          <td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td>
+        </tr>
+        <tr>
+          <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr>
+          <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+        </tr>
+        <tr>
+          <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+        </tr>
+      </table>
+    </div>
+    <footer class="w3-container w3-padding" style="font-family: 'times new roman', serif;">
+      <button class="w3-button w3-brown">Search</button>
+      <button class="w3-button w3-light-grey" onclick="document.getElementById('calendarModal').style.display='none'">Cancel</button>
+    </footer>
+  </div>
+</div>
+<div style="font-family: 'times new roman', serif;">
+<h1>select a hotel</h1>
+</div>
+
+<div class="w3-container w3-padding">
+
+  <!-- 3 Rows of Cards -->
+  <div class="w3-row-padding w3-margin-bottom">
+
+    <!-- CARD 1 -->
+    <div class="w3-third w3-margin-bottom" style="font-family: 'times new roman', serif;">
+      <div class="w3-card-4">
+        <img src="photo/ginger.jpg" class="hotel-img">
+        <div class="w3-container">
+          <h5>Ginger Kochi Kalamassery</h5>
+          <p class="w3-small">Kochi, India</p>
+          <p class="w3-small">Details</p>
+          <p>From <span class="price">₹2,339</span><br><span class="note">Per Night<br>Excluding taxes and fees</span></p>
+          <button class="w3-button brown-btn">VIEW RATES</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="w3-third w3-margin-bottom" style="font-family: 'times new roman', serif;">
+      <div class="w3-card-4">
+        <img src="photo/OIP.jpg" class="hotel-img">
+        <div class="w3-container">
+          <h5>Taj Sawai Ranthambore</h5>
+          <p class="w3-small">Sawai Madhopur, India</p>
+          <p class="w3-small">Details</p>
+          <p>From <span class="price">₹18,150</span><br><span class="note">Per Night<br>Excluding taxes and fees</span></p>
+          <button class="w3-button brown-btn">VIEW RATES</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="w3-third w3-margin-bottom" style="font-family: 'times new roman', serif;">
+      <div class="w3-card-4">
+        <img src="photo/bhopal.jpg" class="hotel-img">
+        <div class="w3-container">
+          <h5>Taj Lakefront Bhopal</h5>
+          <p class="w3-small">Bhopal, India</p>
+          <p class="w3-small">Details <span class="w3-right">Booked in last 3 hours</span></p>
+          <p>From <span class="price">₹6,375</span><br><span class="note">Per Night<br>Excluding taxes and fees</span></p>
+          <button class="w3-button brown-btn">VIEW RATES</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="w3-third w3-margin-bottom" style="font-family: 'times new roman', serif;">
+      <div class="w3-card-4">
+        <img src="photo/R.jpg" class="hotel-img">
+        <div class="w3-container">
+          <h5>Taj Delhi</h5>
+          <p class="w3-small">Delhi, India</p>
+          <p class="w3-small">Details</p>
+          <p>From <span class="price">₹24,000</span><br><span class="note">Per Night<br>Excluding taxes and fees</span></p>
+          <button class="w3-button brown-btn">VIEW RATES</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="w3-third w3-margin-bottom" style="font-family: 'times new roman', serif;">
+      <div class="w3-card-4">
+        <img src="photo/night.jpg" class="hotel-img">
+        <div class="w3-container">
+          <h5>Vivanta Mumbai</h5>
+          <p class="w3-small">Mumbai, India</p>
+          <p class="w3-small">Details</p>
+          <p>From <span class="price">₹12,999</span><br><span class="note">Per Night<br>Excluding taxes and fees</span></p>
+          <button class="w3-button brown-btn">VIEW RATES</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="w3-third w3-margin-bottom" style="font-family: 'times new roman', serif;">
+      <div class="w3-card-4">
+        <img src="photo/hall.jpeg" class="hotel-img">
+        <div class="w3-container">
+          <h5>Ginger Pune</h5>
+          <p class="w3-small">Pune, India</p>
+          <p class="w3-small">Details</p>
+          <p>From <span class="price">₹2,499</span><br><span class="note">Per Night<br>Excluding taxes and fees</span></p>
+          <button class="w3-button brown-btn">VIEW RATES</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="w3-third w3-margin-bottom" style="font-family: 'times new roman', serif;">
+      <div class="w3-card-4">
+        <img src="photo/o.jpg" class="hotel-img">
+        <div class="w3-container">
+          <h5>Taj Bangalore</h5>
+          <p class="w3-small">Bangalore, India</p>
+          <p class="w3-small">Details</p>
+          <p>From <span class="price">₹18,700</span><br><span class="note">Per Night<br>Excluding taxes and fees</span></p>
+          <button class="w3-button brown-btn">VIEW RATES</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="w3-third w3-margin-bottom" style="font-family: 'times new roman', serif;">
+      <div class="w3-card-4">
+        <img src="photo/oi.jpg" class="hotel-img">
+        <div class="w3-container">
+          <h5>Vivanta Chennai</h5>
+          <p class="w3-small">Chennai, India</p>
+          <p class="w3-small">Details</p>
+          <p>From <span class="price">₹9,500</span><br><span class="note">Per Night<br>Excluding taxes and fees</span></p>
+          <button class="w3-button brown-btn">VIEW RATES</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 9 -->
+    <div class="w3-third w3-margin-bottom" style="font-family: 'times new roman', serif;">
+      <div class="w3-card-4">
+        <img src="photo/gin.jpg" class="hotel-img">
+        <div class="w3-container">
+          <h5>Ginger Lucknow</h5>
+          <p class="w3-small">Lucknow, India</p>
+          <p class="w3-small">Details</p>
+          <p>From <span class="price">₹1,899</span><br><span class="note">Per Night<br>Excluding taxes and fees</span></p>
+          <button class="w3-button brown-btn">VIEW RATES</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- ENHANCED FOOTER -->
+		
+	<footer class="w3-black w3-padding-64 w3-center" style="color: #ccc; font-family: 'Georgia', serif;">
+
+	  <div class="w3-row-padding w3-padding-32 w3-container" style="max-width: 1400px; margin: auto; text-align: left;">
+		
+		<!-- ABOUT TAJ -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">About Taj Hotels</h4>
+		  <p>Taj Hotels is a symbol of Indian hospitality with a rich legacy of luxury and excellence. Established in 1903, the brand combines regal heritage with modern luxury across India and globally.</p>
+		</div>
+
+		<!-- QUICK LINKS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Quick Links</h4>
+		  <p><a href="index.html" class="w3-text-white">Destinations</a></p>
+		  <p><a href="hotels.html" class="w3-text-white">Hotels</a></p>
+		  <p><a href="newdining.html" class="w3-text-white">Dining</a></p>
+		  <p><a href="offers.html" class="w3-text-white">Offers</a></p>
+		  <p><a href="membership.html" class="w3-text-white">Membership</a></p>
+		  <p><a href="booking1.html" class="w3-text-white">Book A Stay</a></p>
+		  <p><a href="contact1.html" class="w3-text-white">Contact1</a></p>
+		</div>
+
+		<!-- POPULAR DESTINATIONS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Popular Destinations</h4>
+		  <p>Goa</p>
+		  <p>Mumbai</p>
+		  <p>Jaipur</p>
+		  <p>New Delhi</p>
+		  <p>London</p>
+		  <p>New York</p>
+		</div>
+
+		<!-- HOTEL BRANDS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Our Brands</h4>
+		  <p>Taj</p>
+		  <p>Vivanta</p>
+		  <p>SeleQtions</p>
+		  <p>Ginger</p>
+		  <p>Tree of Life</p>
+		  <p>St. James' Court</p>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin: 40px 0;">
+
+	  <!-- NEWSLETTER AND CONTACT -->
+	  <div class="w3-container w3-padding-16" style="max-width: 1200px; margin: auto;">
+
+		<!-- Newsletter Signup -->
+		<div style="margin-bottom: 30px;">
+		  <h4 style="color: #FFCC33;">Subscribe to our Newsletter</h4>
+		  <p>Stay updated with exclusive offers and luxury experiences.</p>
+		  <input type="email" placeholder="Enter your email" style="padding:10px; width:300px; border-radius: 20px; border:none; margin-right:10px;">
+		  <button style="padding:10px 20px; border:none; border-radius: 20px; background-color:#FFCC33; font-weight: bold;">Subscribe</button>
+		</div>
+
+		<!-- Contact Info & Social -->
+		<div class="w3-row-padding w3-center" style="margin-top: 20px;">
+		  <div class="w3-half">
+			<h5>Contact Us</h5>
+			<p>Email: support@tajhotels.com</p>
+			<p>Phone: +91 22 6601 1825</p>
+			<p>Corporate Office: Mumbai, India</p>
+		  </div>
+		  <div class="w3-half">
+			<h5>Follow Us</h5>
+			<p>
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-youtube"></i></a>
+			</p>
+		  </div>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin-top: 40px;">
+	  <p style="color: #999;">&copy; 2025 Taj Hotels. All rights reserved. | <a href="#" class="w3-text-orange">Privacy Policy</a> | <a href="#" class="w3-text-orange">Terms of Service</a></p>
+	</footer>
+	</body>
+</html>

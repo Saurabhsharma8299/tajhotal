@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>taj offers page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+  
+    .offers-bg {
+      background-image: url('oo.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      position: relative;
+      z-index: 1; 
+    }
+	.w3-bar {
+      position: fixed;
+      width: 100%;
+      z-index: 10000; 
+    }
+	.w3-dropdown-content {
+      position: fixed !important; 
+      top: 60px; 
+      right: 10px; 
+      z-index: 10001; 
+      display: none; 
+    }
+
+    .w3-dropdown-hover:hover .w3-dropdown-content {
+      display: block !important; 
+    }
+	.card-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  
+}
+.carding{
+  width: 500px;
+  height:80%;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  float:left;
+  margin:20px;
+  padding:10px;
+}
+.card2{
+  width: 500px;
+  height:80%;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  float:left;
+  margin:20px;
+  padding:10px;
+}
+.image-hover {
+  overflow: hidden;
+}
+.image-hover img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.image-hover:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+.w3-btn{
+      background-color:#a17428;
+	  color:white; 
+	  font-family: 'times new roman', serif;
+
+}
+.section-title{
+	               text-align:center;
+				   position:relative;
+				   margin:50px 0;
+				   font-family: 'times new roman', serif;
+				   font-size:36px;
+				   color:#333;
+	               }
+     .section-title::before,
+	 .section-title::after{
+	                       content:"";
+						   position:absolute;
+						   top:50%;
+						   width:100px;
+                           height:1px;						   
+						 background-color:#333;
+	               }
+	.section-title::before{
+	                    left:0;
+						margin-left:-120px;		
+	                   }
+	.section-title::after{
+	                    right:0;
+						margin-right:-120px;		
+	                   }
+	.wrapper{
+	        display:flex;
+			align-items:center;
+			justify-content:center;
+	}
+	.section-title-container{
+	                         position:relative;
+							 padding:0 40px;
+	}
+	.section-title-container::before,
+	.section-title-container::after{
+	                               content:"";
+								   height:1px;
+								   width:100px;
+								   background:#000;
+								   position:absolute;
+								   top:50%;
+	}
+	.section-title-container::before{
+	                              left:0;
+								  transform:translatex(-110%);
+	}
+	.section-title-container::after{
+	                              right:0;
+								  transform:translatex(110%);
+	}
+	
+	</style>
+	</head>
+	
+	<body>
+	   <!-- Navbar -->
+<div class="w3-bar w3-white w3-card w3-large w3-padding" style="display:flex; justify-content:space-between; align-items:center; padding:0 20px; height:60px;">
+  <div style="display:flex; align-items:center;">
+  <a href="#" class="w3-bar-item">
+    <img src="photo/logo.png" alt="logo" style="height:50px;width:60px;">
+  </a>
+  </div>
+  
+  <div style="display:flex; justify-content:center; flex:1; gap:15px;">  
+  <a href="destination.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+  <a href="hotels.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+  <a href="newdining.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+  <a href="offers.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+  <a href="membership.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+  <a href="wellness1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+  <a href="contact1.html" class="w3-bar-item w3-button w3-hide-small" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+  </div>
+  
+  
+  <div class="w3-right w3-hide-small" style="display:flex; align-items:center; gap:10px;">
+    <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+    <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+  </div>
+
+  <div class="w3-dropdown-hover w3-right w3-hide-medium w3-hide-large">
+    <button class="w3-button" style="color:#d4af37;">☰ Menu</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="destination.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DESTINATIONS</a>
+      <a href="hotels.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">HOTELS</a>
+      <a href="newdining.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">DINING</a>
+      <a href="offers.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">OFFERS</a>
+      <a href="membership.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">MEMBERSHIP</a>
+      <a href="wellness1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">WELLNESS</a>
+      <a href="contact1.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">CONTACT</a>
+      <a href="login.html" class="w3-bar-item w3-button" style="color:#d4af37; font-family: 'times new roman', serif;">LOGIN / JOIN</a>
+      <a href="booking1.html" class="w3-bar-item w3-button w3-round-large" style="background-color:#a17428;color:white; font-family: 'times new roman', serif;">BOOK A STAY</a>
+    </div>
+  </div>
+</div>
+<br><br>
+<!-- contact Section -->
+<div class="offers-bg">
+  <div style="display: flex; align-items: center; color: white; font-weight: bold; font-size: 25px; font-style: italic; font-family: 'georgia', serif; position: absolute; bottom: 60px; left: 20px;">
+    <span style="display: inline-block; height: 2px; width: 70px; background-color: white; margin-right: 15px;"></span>
+    <h1 style="font-family: 'times new roman', serif;">___OFFERS<br> & PROMOTIONS</h1>
+  </div>
+</div>
+
+<div style="text-align: center; padding: 100px 20px; ">
+  <h1 style="font-size: 36px; letter-spacing: 2px; color: #333; font-family: 'times new roman', serif; position: relative; display: inline-block; padding: 0px 20px;">_____MEMBER RATE_____</h1>
+</div>
+
+	<div class="card-container2">
+  <div class="carding">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod5/f297984ccd4e3049111bc4fa2af39c4bf6c1f8ab-1458x896.jpg?w=480&auto=format&dpr=2" alt="Loya Restaurant">
+    </div>
+    <div class="card-content">
+      <h4 style="font-family: 'times new roman', serif;">MONSOON FESTIVAL-20%SAVINGS ON BREAKFAST INCLUSIVE STAYS</h4>
+      <p style="font-family: 'times new roman', serif;">
+        Embrace the magic of rains with 20% savings on 
+		breakfast-inclusive stays and more. From enchanting
+		views to delightful culinary experiences, let the
+		season be the perfect backdrop for your 
+		unforgettable stay with us.
+		<br><br>
+		Validity: 10 Jun 2025 - 31 Jul 2025
+      </p>
+	  <button class="w3-btn">LOGIN/JOIN</button>
+    </div>
+  </div>
+
+  <div class="card2">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod5/a7781554b1bf548e13b35a4ba28e5697af7d8dc7-700x430.jpg?w=480&auto=format&dpr=2" alt="Golden Dragon">
+    </div>
+    <div class="card-content">
+      <h3 style="font-family: 'times new roman', serif;">Suite Surprises - Member Only</h3>
+      <p style="font-family: 'times new roman', serif;">
+        Indulge in a stay that goes beyond the ordinary 
+		and experience enhanced comfort, added space,
+		thoughtful touches and unparalleled extravagance 
+		with our special package for suites.gold-more-icon
+		<br><br>
+		Validity: Round the Year
+      </p>
+	  <button class="w3-btn">LOGIN/JOIN</button>
+    </div>
+  </div>
+ 
+  
+  
+  <div class="carding">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod5/4cabebea6150a37989818cb399995d447e0c726e-700x430.jpg?w=480&auto=format&dpr=2" alt="house of nomad">
+    </div>
+    <div class="card-content">
+      <h3 style="font-family: 'times new roman', serif;">Romancing The Rains in Goa</h3>
+      <p style="font-family: 'times new roman', serif;">
+        Unwind in Goa this monsoon with 25% savings on
+		breakfast-inclusive stays and more. Explore 
+		cascading waterfalls, verdant landscapes,
+		and a renewed sense of nature's 
+		beauty on your next Goan escap
+		<br><br>
+		Validity: 30 Apr 2025 - 10 Jul 2025
+      </p>
+	  <button class="w3-btn">LOGIN/JOIN</button>
+    </div>
+  </div>
+
+  <div class="card2">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod5/3e5b9c7121b2aa5999ad836848c2d8846e014681-1458x896.jpg?w=480&auto=format&dpr=2" alt="wasabi by morimoto">
+    </div>
+    <div class="card-content">
+      <h3 style="font-family: 'times new roman', serif;">Romancing the Rains in Kerala</h3>
+      <p style="font-family: 'times new roman', serif;">
+        Unwind in Kerala this monsoon with 25% savings
+		on breakfast-inclusive stays and more.
+		Explore cascading waterfalls, verdant landscapes,
+		and a renewed sense of nature's 
+		beauty on your next Kerala escape
+		<br><br>
+		Validity: 30 Apr 2025 - 10 Jul 2025
+      </p>
+	  <button class="w3-btn">LOGIN/JOIN</button>
+    </div>	
+  </div>
+  </div>
+	
+	<div class="w3-container">
+<div class="wrapper">
+<div class="section-title-container">
+<h2 class="section-title" style="font-family: 'times new roman', serif;">EXCLUSIVE OFFERS</h2>
+</div>
+</div>
+</div>
+
+<div class="card-container2">
+  <div class="carding">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod5/95613ec0f369426a31e46ed4da401ce4a6196732-1050x645.jpg?w=480&auto=format&dpr=2" alt="Loya Restaurant">
+    </div>
+    <div class="card-content">
+      <h4 style="font-family: 'times new roman', serif;">Stay A Bit Longer - Room only</h4>
+      <p style="font-family: 'times new roman', serif;">
+        Experience an extraordinary stay with 
+		our exclusive package crafted to reward
+		those who opt to prolong their stay with us.
+		Indulge in our hospitality for a minimum of 
+		three nights and enjoy remarkable discounts 
+		on your accommodation and delectable food and soft beverages.
+		<br><br>
+		Validity: Round the Year
+      </p>
+	  <button class="w3-btn">LOGIN/JOIN</button>
+    </div>
+  </div>
+
+  <div class="card2">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod5/2ebe2a6eef8d9771ede6d62201dac2ac48ea37e2-1400x860.jpg?w=480&auto=format&dpr=2" alt="Golden Dragon">
+    </div>
+    <div class="card-content">
+      <h3 style="font-family: 'times new roman', serif;">Soulful Abodes</h3>
+      <p style="font-family: 'times new roman', serif;">
+        Reconnect with your spirit, awaken your inner 
+		wisdom and discover a deeper sense of peace with 
+		Soulful Abodes. Embark on your very own transformative
+		journey across India’s 50+ transcendent destinations,
+		as you enjoy benefits crafted mindfully
+		for the spiritual traveller in you.
+		<br><br>
+		Validity: Round the Year
+      </p>
+	  <button class="w3-btn">LOGIN/JOIN</button>
+    </div>
+  </div>
+ 
+  
+  
+  <div class="carding">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod5/cc7207f2c3d1bf3fa6cd6185c1a4ee84f0361423-700x430.jpg?w=480&auto=format&dpr=2" alt="house of nomad">
+    </div>
+    <div class="card-content">
+      <h3 style="font-family: 'times new roman', serif;">Dream. Drive. Discover. Delight. (4D)</h3>
+      <p style="font-family: 'times new roman', serif;">
+        Drive away to enjoy the company of your loved ones
+		and spend unforgettable moments in our 
+		exemplary care, with all meals included.
+		<br><br>
+		Validity: Round the Year
+      </p>
+	  <button class="w3-btn">LOGIN/JOIN</button>
+    </div>
+  </div>
+
+  <div class="card2">
+    <div class="image-hover">
+      <img src="https://cdn.sanity.io/images/ocl5w36p/prod5/31324307239c6589f8facbe1a1748d581ca6f09f-1400x860.jpg?w=480&auto=format&dpr=2" alt="wasabi by morimoto">
+    </div>
+    <div class="card-content">
+      <h3 style="font-family: 'times new roman', serif;">Stay A Bit Longer - Breakfast Inclusive</h3>
+      <p style="font-family: 'times new roman', serif;">
+        Embark on an unforgettable journey with 
+		our exclusive stay package designed to
+		reward those who choose to extend their 
+		sojourn with us. Stay with us for three 
+		nights or more to enjoy special savings on 
+		your room rate and food & soft beverages.gold-more-icon.
+		<br><br>
+		Validity: Round the Year
+      </p>
+	  <button class="w3-btn">LOGIN/JOIN</button>
+    </div>	
+  </div>
+  </div>
+	<!-- ENHANCED FOOTER -->
+		
+	<footer class="w3-black w3-padding-64 w3-center" style="color: #ccc; font-family: 'Georgia', serif;">
+
+	  <div class="w3-row-padding w3-padding-32 w3-container" style="max-width: 1400px; margin: auto; text-align: left;">
+		
+		<!-- ABOUT TAJ -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">About Taj Hotels</h4>
+		  <p>Taj Hotels is a symbol of Indian hospitality with a rich legacy of luxury and excellence. Established in 1903, the brand combines regal heritage with modern luxury across India and globally.</p>
+		</div>
+
+		<!-- QUICK LINKS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Quick Links</h4>
+		  <p><a href="destination.html" class="w3-text-white">Destinations</a></p>
+		  <p><a href="hotels.html" class="w3-text-white">Hotels</a></p>
+		  <p><a href="dining.html" class="w3-text-white">Dining</a></p>
+		  <p><a href="offers.html" class="w3-text-white">Offers</a></p>
+		  <p><a href="membership.html" class="w3-text-white">Membership</a></p>
+		  <p><a href="bookastay.html" class="w3-text-white">Book A Stay</a></p>
+		</div>
+
+		<!-- POPULAR DESTINATIONS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Popular Destinations</h4>
+		  <p>Goa</p>
+		  <p>Mumbai</p>
+		  <p>Jaipur</p>
+		  <p>New Delhi</p>
+		  <p>London</p>
+		  <p>New York</p>
+		</div>
+
+		<!-- HOTEL BRANDS -->
+		<div class="w3-quarter w3-padding-small">
+		  <h4 style="color: #FFCC33;">Our Brands</h4>
+		  <p>Taj</p>
+		  <p>Vivanta</p>
+		  <p>SeleQtions</p>
+		  <p>Ginger</p>
+		  <p>Tree of Life</p>
+		  <p>St. James' Court</p>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin: 40px 0;">
+
+	  <!-- NEWSLETTER AND CONTACT -->
+	  <div class="w3-container w3-padding-16" style="max-width: 1200px; margin: auto;">
+
+		<!-- Newsletter Signup -->
+		<div style="margin-bottom: 30px;">
+		  <h4 style="color: #FFCC33;">Subscribe to our Newsletter</h4>
+		  <p>Stay updated with exclusive offers and luxury experiences.</p>
+		  <input type="email" placeholder="Enter your email" style="padding:10px; width:300px; border-radius: 20px; border:none; margin-right:10px;">
+		  <button style="padding:10px 20px; border:none; border-radius: 20px; background-color:#FFCC33; font-weight: bold;">Subscribe</button>
+		</div>
+
+		<!-- Contact Info & Social -->
+		<div class="w3-row-padding w3-center" style="margin-top: 20px;">
+		  <div class="w3-half">
+			<h5>Contact Us</h5>
+			<p>Email: support@tajhotels.com</p>
+			<p>Phone: +91 22 6601 1825</p>
+			<p>Corporate Office: Mumbai, India</p>
+		  </div>
+		  <div class="w3-half">
+			<h5>Follow Us</h5>
+			<p>
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+			  <a href="#" class="w3-hover-text-orange w3-large"><i class="fab fa-youtube"></i></a>
+			</p>
+		  </div>
+		</div>
+
+	  </div>
+
+	  <hr style="border-color: #333; margin-top: 40px;">
+	  <p style="color: #999;">&copy; 2025 Taj Hotels. All rights reserved. | <a href="#" class="w3-text-orange">Privacy Policy</a> | <a href="#" class="w3-text-orange">Terms of Service</a></p>
+	</footer>
+
+	</body>
